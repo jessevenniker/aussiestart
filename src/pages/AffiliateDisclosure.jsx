@@ -36,12 +36,29 @@ export default function AffiliateDisclosure() {
             <li>Vergelijkers zijn op dekking gerangschikt, niet op commissie.</li>
             <li>Als een betere niet-affiliate-optie bestaat, noemen we die ook.</li>
           </ul>
-          <h2>Welke partners</h2>
+          <h2>Bevestigde partners</h2>
+          <p>Hieronder de partners waarmee we op dit moment een actieve affiliate-relatie hebben.</p>
+          <h3>SafetyWing (sinds 29 april 2026)</h3>
+          <ul>
+            <li>Programma: SafetyWing Ambassador</li>
+            <li>Commissie: 10% recurring zolang jij verzekerd blijft (tot 364 dagen)</li>
+            <li>Cookie: 365 dagen</li>
+            <li>Onze referentie-ID: 26519283</li>
+            <li>Te zien op: <a href="/verzekering">verzekeringspagina</a></li>
+          </ul>
           <p>
-            De volledige lijst publiceren we zodra de eerste partners live staan. Tot die tijd
-            staan op deze pagina alleen de criteria. Verwacht: SafetyWing, Wise, Booking,
-            Hostelworld, DiscoverCars, JoHo.
+            We adviseren SafetyWing alleen aan WHM's voor wie het past (lange flexibele reizen, lager budget).
+            Voor wie veel waardevolle spullen meeneemt of NL-talige polis wil, raden we expliciet JoHo of Allianz
+            aan, ook al ontvangen we daar geen commissie van. Onze aanbeveling staat los van wat we verdienen.
           </p>
+          <h3>In voorbereiding</h3>
+          <p>Hieronder partners waarvan we de aanvraag of integratie gaan doen.</p>
+          <ul>
+            <li>Wise (banking-transfers)</li>
+            <li>Hostelworld of Booking.com (hostels en accommodatie)</li>
+            <li>DiscoverCars (autohuur)</li>
+          </ul>
+          <p>Zodra deze live staan voegen we ze toe aan deze lijst, met datum.</p>
         </div>
       </section>
     </>
