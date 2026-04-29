@@ -18,9 +18,9 @@ const tasks = [
   },
   {
     title: 'Bankrekening openen',
-    blurb: 'Commonwealth, ANZ, NAB of Westpac. Paspoort + Australisch adres voldoen meestal.',
+    blurb: 'CommBank, ANZ, NAB of Westpac plus Wise. Paspoort + Australisch adres voldoen meestal.',
     when: 'Dag 1–3',
-    path: null,
+    path: '/banking',
   },
   {
     title: 'SIM-kaart kopen',
@@ -36,9 +36,9 @@ const tasks = [
   },
   {
     title: 'Hostel of sharehouse zoeken',
-    blurb: 'Eerste week meestal hostel. Daarna Flatmates.com.au, Facebook-groepen, Gumtree.',
+    blurb: 'Eerste week meestal hostel. Per stad een aanrader-lijst, daarna Flatmates.com.au, Facebook-groepen, Gumtree.',
     when: 'Week 1–2',
-    path: null,
+    path: '/hostels',
   },
 ]
 

@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
 import Slider from './Slider.jsx'
 
-const AUD_TO_EUR = 0.61 // april 2026, indicatief
+const AUD_TO_EUR = 0.59 // april 2026: 1 EUR ≈ 1,70 AUD
 const fmtAUD = (n) => 'AUD ' + Math.round(n).toLocaleString('nl-NL')
 const fmtEUR = (n) => '€ ' + Math.round(n).toLocaleString('nl-NL')
 
@@ -124,7 +124,7 @@ export default function CostCalculator() {
 
         <div className="text-xs text-bone/60 leading-relaxed">
           Reken extra op AUD 5.000 spaargeld dat je moet kunnen tonen bij visumaanvraag.
-          Cijfers zijn schattingen op basis van mensen die er nu zijn. Wisselkoers AUD→EUR ≈ 0,61.
+          Cijfers zijn schattingen op basis van mensen die er nu zijn. Wisselkoers AUD→EUR ≈ 0,59.
         </div>
       </aside>
     </div>

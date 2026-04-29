@@ -48,16 +48,21 @@ export default function Kosten() {
         </p>
 
         <h2>Hoeveel verdien je terug?</h2>
-        <p>Bij een gemiddeld backpacker-tarief van AUD 24/uur en 38 uur per week:</p>
+        <p>
+          Het Australische minimumloon is sinds 1 juli 2025 AUD 24,95/uur. Voor backpackers met een casual
+          contract (de norm in hospitality, hostels, retail en farmwork) komt daar 25% casual loading bovenop:
+          <strong> AUD 31,19/uur</strong>. Bij 38 uur per week:
+        </p>
         <ul>
-          <li>Bruto per week: AUD 912</li>
-          <li>Belasting (15% WHM-tarief): AUD 137</li>
-          <li>Netto per week: <strong>AUD 775</strong></li>
-          <li>Netto per maand: <strong>AUD 3.355</strong> (≈ €2.045)</li>
+          <li>Bruto per week: AUD 1.185</li>
+          <li>Belasting (15% WHM-tarief): AUD 178</li>
+          <li>Netto per week: <strong>AUD 1.007</strong></li>
+          <li>Netto per maand: <strong>AUD 4.365</strong> (≈ €2.580)</li>
         </ul>
         <p>
-          Bij gemiddelde uitgaven (AUD 2.500/maand) houd je dus ruwweg AUD 800 per maand over. Niet rijk, maar
-          wel break-even na een paar maanden, en daarna is alles winst.
+          Bij gemiddelde uitgaven (AUD 2.500–3.500/maand) hou je dus AUD 800–1.800 per maand over. Op weekenden
+          en feestdagen liggen tarieven nog hoger, tot 2,5× het basistarief. Volledige uitleg op de{' '}
+          <Link to="/loon">loon-en-belasting-pagina</Link>.
         </p>
         <Callout kind="info" title="Realistisch scenario">
           Iemand die na 2 maanden werk vindt en dan 8 maanden voltijd werkt, komt aan het eind van een jaar uit
@@ -118,8 +123,9 @@ export default function Kosten() {
           eerste maanden over.
         </FAQ>
         <FAQ q="Hoeveel verdien ik gemiddeld per uur als WHM?">
-          Het Australische minimumloon is AUD 24,10/uur (2025-2026), wat de meeste hospitality- en farmwork-banen
-          betalen. Skilled werk (kantoor, bouw, mining) kan 30-45 AUD/uur. Boven AUD 27/uur is een goeie deal.
+          Het Australische minimumloon is AUD 24,95/uur sinds 1 juli 2025. Met casual loading (25% extra) komt
+          dat voor de meeste backpackerbanen op AUD 31,19/uur. Skilled werk (bouw, mining) kan AUD 35-50/uur.
+          Volledige uitleg op de <Link to="/loon">loon-en-belasting-pagina</Link>.
         </FAQ>
         <FAQ q="Moet ik mijn budget in EUR of AUD doen?">
           AUD voor je dagelijkse uitgaven (alles wordt daar in AUD geprijsd), EUR voor de vergelijking met je
@@ -150,7 +156,7 @@ function KostenAside() {
         <li><span className="text-bone/70">Eerste maand:</span> +AUD 1.500–2.500</li>
         <li><span className="text-bone/70">Spaargeld:</span> AUD 5.000 (visum-eis)</li>
         <li><span className="text-bone/70">Vóór vertrek:</span> €4.500–6.500</li>
-        <li><span className="text-bone/70">Verdienen:</span> ≈AUD 3.300/mnd netto</li>
+        <li><span className="text-bone/70">Verdienen:</span> ≈AUD 4.365/mnd netto</li>
       </ul>
       <hr className="my-5 border-bone/20" />
       <div className="text-xs uppercase tracking-wider text-ochre mb-2">Volgende stap</div>
