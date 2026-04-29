@@ -10,7 +10,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            'linear-gradient(180deg, #15281f 0%, #1f3a2e 35%, #5d3724 65%, #c6531f 92%, #d97a3a 100%)',
+            'linear-gradient(180deg, #15281f 0%, #1f3a2e 35%, #5d3724 65%, #b04918 92%, #d97a3a 100%)',
         }}
         aria-hidden="true"
       />

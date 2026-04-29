@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
-import { ArticleLayout } from '../components/Article.jsx'
+import { ArticleLayout, Callout } from '../components/Article.jsx'
+import AffiliateLink from '../components/AffiliateLink.jsx'
 
 const tasks = [
   {
@@ -74,6 +75,26 @@ export default function EersteWeek() {
           "ik krijg pas in week 5 mijn eerste payslip omdat ik geen TFN had". Hieronder de zes dingen die
           praktisch iedereen in zijn eerste week regelt, en in welke volgorde.
         </p>
+
+        <h2>Eerst: van vliegveld naar stad</h2>
+        <p>
+          Drie opties vanaf Sydney (SYD), Melbourne (MEL) of Brisbane (BNE) airport, in volgorde van prijs:
+        </p>
+        <ul>
+          <li><strong>Trein/openbaar vervoer:</strong> AUD 10-22 (Sydney AirportLink, Melbourne Skybus, Brisbane Airtrain). Goedkoopst, maar met grote backpack soms krap.</li>
+          <li><strong>Vooraf-geboekte transfer (KiwiTaxi e.d.):</strong> AUD 50-90 voor een privé-rit naar je hostel. Vaste prijs, geen verrassingen, chauffeur staat op je naam bij aankomsthal.</li>
+          <li><strong>Uber / Didi vanaf de stoeprand:</strong> AUD 45-80 afhankelijk van vraag, kan oplopen bij surge pricing.</li>
+        </ul>
+        <Callout kind="info" title="Wanneer KiwiTaxi nuttig is">
+          Aankomst om 23:00 met een hostel in Newtown of Brunswick? Vooraf boeken voorkomt 45 minuten zoeken
+          naar de juiste platforms terwijl je net 22 uur in een vliegtuig zat. Bij een ochtend-aankomst met
+          alleen een handbagage is OV vaak slimmer.
+        </Callout>
+        <div className="not-prose my-5">
+          <AffiliateLink partner="kiwitaxi" variant="button">
+            Boek transfer met KiwiTaxi
+          </AffiliateLink>
+        </div>
 
         <h2>De zes dingen, op volgorde</h2>
         <div className="not-prose grid gap-3 my-6">

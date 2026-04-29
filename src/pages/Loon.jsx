@@ -87,8 +87,9 @@ export default function Loon() {
 
         <h2>Belasting, wat je inhoudt</h2>
         <p>
-          Als Working Holiday Maker val je onder een speciale belastingschaal. Tarieven voor het belastingjaar
-          2025-2026 (1 juli 2025 t/m 30 juni 2026):
+          Als Working Holiday Maker val je onder een speciale belastingschaal. Onderstaande tarieven gelden
+          voor het belastingjaar 2025-2026 (1 juli 2025 t/m 30 juni 2026). De ATO past schalen vrijwel altijd
+          aan op 1 juli, dus check vlak voor het nieuwe fiscale jaar of dit nog actueel is.
         </p>
         <FactsTable rows={[
           ['AUD 0 – 45.000',         '15%'],
@@ -127,8 +128,10 @@ export default function Loon() {
           ATO-website nadat je je visum hebt laten verlopen of bent uitgereisd.
         </p>
         <p>
-          Bij een jaar werken aan AUD 50.000 bruto kom je op AUD 6.000 super. Daar gaat een belasting van 65%
-          af voor WHM's (een speciaal hoog tarief alleen voor WHV-houders). Je houdt dus rond AUD 2.100 over.
+          Bij een jaar werken aan AUD 50.000 bruto kom je op AUD 6.000 super. Specifiek voor 417- en
+          462-houders houdt de ATO bij DASP-uitkering 65% in op het belastbare deel (een speciaal hoog tarief
+          dat alleen voor Working Holiday Makers geldt). De overgebleven ~35% komt op je rekening, meestal
+          binnen 28 dagen na de vervaldatum van je visum. Bij AUD 6.000 super houd je dus rond AUD 2.100 over.
           Geen klein bedrag.
         </p>
 

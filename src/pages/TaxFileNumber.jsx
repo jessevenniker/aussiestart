@@ -71,7 +71,7 @@ export default function TaxFileNumber() {
         </Callout>
 
         <h2>Wat is de WHM-belasting precies?</h2>
-        <p>De Australische belasting op Working Holiday Maker-loon, voor het belastingjaar 2025-2026 (loopt van 1 juli 2025 tot 30 juni 2026):</p>
+        <p>De Australische belasting op Working Holiday Maker-loon, voor het belastingjaar 2025-2026 (loopt van 1 juli 2025 tot 30 juni 2026). Op 1 juli passen ATO-schalen vrijwel altijd aan, check vlak voor het nieuwe fiscale jaar of dit nog actueel is:</p>
         <FactsTable rows={[
           ['AUD 0 – 45.000',         '15%'],
           ['AUD 45.001 – 135.000',   '30%'],

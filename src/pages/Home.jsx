@@ -129,7 +129,7 @@ function Cross() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="mt-0.5 shrink-0">
       <circle cx="9" cy="9" r="9" fill="#f4ead6" />
-      <path d="M6 6l6 6M12 6l-6 6" stroke="#c6531f" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M6 6l6 6M12 6l-6 6" stroke="#b04918" strokeWidth="1.8" strokeLinecap="round" />
     </svg>
   )
 }

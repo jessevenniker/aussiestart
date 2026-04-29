@@ -10,7 +10,7 @@ export default {
         forest:    '#1f3a2e',
         forestdk:  '#15281f',
         sunset:    '#d97a3a',
-        ember:     '#c6531f',
+        ember:     '#b04918',
         ochre:     '#e0a458',
         sand:      '#f4ead6',
         cream:     '#faf5e9',
