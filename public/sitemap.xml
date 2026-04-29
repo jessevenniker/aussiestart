@@ -13,6 +13,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aussiestart.vercel.app/voor-vertrek</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://aussiestart.vercel.app/kosten</loc>
     <lastmod>2026-04-29</lastmod>
     <changefreq>monthly</changefreq>
