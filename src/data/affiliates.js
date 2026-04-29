@@ -16,4 +16,12 @@ export const affiliates = {
     cookie: '365 dagen',
     confirmedSince: '29 april 2026',
   },
+  wise: {
+    name: 'Wise',
+    url: 'https://wise.com/invite/dic/jesserobinmartv',
+    program: 'Wise Refer-a-Friend',
+    commission: 'Variabel per kwalificerende referral',
+    cookie: 'Sessie-gebaseerd',
+    confirmedSince: '29 april 2026',
+  },
 }

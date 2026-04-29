@@ -51,12 +51,20 @@ export default function AffiliateDisclosure() {
             Voor wie veel waardevolle spullen meeneemt of NL-talige polis wil, raden we expliciet JoHo of Allianz
             aan, ook al ontvangen we daar geen commissie van. Onze aanbeveling staat los van wat we verdienen.
           </p>
-          <h3>In voorbereiding</h3>
-          <p>Hieronder partners waarvan we de aanvraag of integratie gaan doen.</p>
+          <h3>Wise (sinds 29 april 2026)</h3>
           <ul>
-            <li>Wise (banking-transfers)</li>
-            <li>Hostelworld of Booking.com (hostels en accommodatie)</li>
+            <li>Programma: Wise Refer-a-Friend</li>
+            <li>Commissie: variabel per kwalificerende referral</li>
+            <li>Cookie: sessie-gebaseerd</li>
+            <li>Te zien op: <a href="/banking">banking-pagina</a></li>
+          </ul>
+          <h3>In voorbereiding</h3>
+          <p>Hieronder partners waarvan we de aanvraag of integratie nog gaan doen.</p>
+          <ul>
+            <li>Hostelworld (hostels per stad)</li>
+            <li>Booking.com (accommodatie)</li>
             <li>DiscoverCars (autohuur)</li>
+            <li>JoHo Insurances (NL-talige reisverzekering)</li>
           </ul>
           <p>Zodra deze live staan voegen we ze toe aan deze lijst, met datum.</p>
         </div>

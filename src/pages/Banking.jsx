@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { Callout, FAQ, ArticleLayout } from '../components/Article.jsx'
 import SourceLink from '../components/SourceLink.jsx'
+import AffiliateLink from '../components/AffiliateLink.jsx'
 
 const banks = [
   {
@@ -173,6 +174,11 @@ export default function Banking() {
         <p>
           Voor backpackers die regelmatig EUR ↔ AUD overmaken, scheelt dit makkelijk AUD 200-500 per jaar.
         </p>
+        <div className="not-prose my-6">
+          <AffiliateLink partner="wise" variant="button">
+            Open Wise-rekening
+          </AffiliateLink>
+        </div>
 
         <h2>Belastinginhouding op rente</h2>
         <Callout kind="info" title="Geef je TFN door zodra je hem hebt">
@@ -263,6 +269,9 @@ function BankingAside() {
         <li><span className="text-bone/70">Doorreis NZ:</span> ANZ</li>
         <li><span className="text-bone/70">Open vooraf:</span> ja</li>
       </ul>
+      <div className="mt-4">
+        <AffiliateLink partner="wise">Open een Wise-rekening</AffiliateLink>
+      </div>
       <hr className="my-5 border-bone/20" />
       <div className="text-xs uppercase tracking-wider text-ochre mb-2">Verder lezen</div>
       <ul className="space-y-2 text-sm">
