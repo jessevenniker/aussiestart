@@ -15,7 +15,7 @@ export default function Hostels() {
       <PageHeader
         eyebrow="Wonen · Hostels"
         title="Backpacker-hostels per stad"
-        intro="Welke hostels worden door meerdere onafhankelijke gidsen aanbevolen, per stad. Alleen feiten: naam, adres, wat het uniek maakt. Geen verborgen affiliate-links, geen sponsored placements."
+        intro="Welke hostels in meerdere onafhankelijke backpacker-gidsen genoemd worden, per stad. Alleen feiten: naam, locatie, wat het uniek maakt. Geen verborgen affiliate-links, geen sponsored placements."
         lastChecked="29 april 2026"
         source="Hostelworld + NomadicMatt + BrokeBackpacker + Hostelgeeks"
       />
@@ -27,10 +27,13 @@ export default function Hostels() {
           rouleer je naar nieuwe hostels per stad.
         </p>
         <Callout kind="info" title="Hoe deze lijst tot stand kwam">
-          Voor elke stad hebben we hostels overgenomen die door minstens twee onafhankelijke gidsen worden
-          aanbevolen (Hostelworld, NomadicMatt, BrokeBackpacker, Hostelgeeks, SydneyExpert, NomadicMick). Geen
-          enkel hostel betaalt voor zijn plek hier. Wanneer we later partnerships sluiten met Hostelworld of
-          Booking.com voegen we duidelijk gelabelde affiliate-links toe.
+          We hebben hostels overgenomen die in meerdere onafhankelijke backpacker-gidsen voorkomen
+          (Hostelworld, NomadicMatt, BrokeBackpacker, Hostelgeeks, SydneyExpert, NomadicMick). Geen enkel
+          hostel betaalt voor zijn plek hier. Adressen zijn waar mogelijk straat + nummer; bij sommige
+          entries staat alleen de buurt/locatie omdat het exacte adres niet uit de bronnen bevestigd kon
+          worden. Verifieer altijd op Hostelworld of de officiële site voor je boekt. Wanneer we later
+          partnerships sluiten met Hostelworld of Booking.com voegen we duidelijk gelabelde affiliate-links
+          toe.
         </Callout>
 
         <p>Spring direct naar een stad:</p>

@@ -57,7 +57,7 @@ export default function Kosten() {
           <li>Bruto per week: AUD 1.185</li>
           <li>Belasting (15% WHM-tarief): AUD 178</li>
           <li>Netto per week: <strong>AUD 1.007</strong></li>
-          <li>Netto per maand: <strong>AUD 4.365</strong> (≈ €2.580)</li>
+          <li>Netto per maand: <strong>AUD 4.365</strong> (≈ €2.660 bij koers 0,61)</li>
         </ul>
         <p>
           Bij gemiddelde uitgaven (AUD 2.500–3.500/maand) hou je dus AUD 800–1.800 per maand over. Op weekenden
@@ -139,8 +139,8 @@ export default function Kosten() {
           minimumloontabellen van de Fair Work Ombudsman, en SafetyWing/JoHo/Allianz-tarieven.
         </p>
         <p className="text-sm text-slate">
-          De wisselkoers AUD→EUR ≈ 0,61 is een momentopname (april 2026). Voor de actuele koers: check Wise of
-          XE op het moment van plannen.
+          De wisselkoers AUD→EUR ≈ 0,61 is een momentopname (april 2026, bandbreedte 0,55-0,68 over een
+          jaar). Voor de actuele koers: check Wise of XE op het moment van plannen.
         </p>
       </ArticleLayout>
     </>

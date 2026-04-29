@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aussiestart.nl/sitemap.xml
+Sitemap: /sitemap.xml

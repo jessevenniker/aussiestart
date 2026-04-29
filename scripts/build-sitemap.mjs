@@ -1,0 +1,57 @@
+/**
+ * Genereert public/sitemap.xml op basis van een statische lijst routes.
+ * Draait pre-build via npm script.
+ */
+import { writeFileSync } from 'node:fs'
+import { fileURLToPath } from 'node:url'
+import { dirname, resolve } from 'node:path'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+
+// Domein wordt op build-tijd bepaald via env var, met fallback.
+// Op Vercel staat VERCEL_URL beschikbaar; voor productie zet je SITE_URL in env.
+const SITE = process.env.SITE_URL
+  || (process.env.VERCEL_ENV === 'production' && process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : null)
+  || 'https://aussiestart.vercel.app'
+
+const routes = [
+  { path: '/',                   changefreq: 'weekly',  priority: 1.0 },
+  { path: '/begin-hier',         changefreq: 'monthly', priority: 0.8 },
+  { path: '/visum',              changefreq: 'monthly', priority: 0.9 },
+  { path: '/voor-vertrek',       changefreq: 'monthly', priority: 0.7 },
+  { path: '/kosten',             changefreq: 'monthly', priority: 0.9 },
+  { path: '/loon',               changefreq: 'monthly', priority: 0.8 },
+  { path: '/banking',            changefreq: 'monthly', priority: 0.8 },
+  { path: '/werk',               changefreq: 'monthly', priority: 0.8 },
+  { path: '/wonen',              changefreq: 'monthly', priority: 0.6 },
+  { path: '/hostels',            changefreq: 'monthly', priority: 0.8 },
+  { path: '/verzekering',        changefreq: 'monthly', priority: 0.9 },
+  { path: '/medicare',           changefreq: 'monthly', priority: 0.8 },
+  { path: '/eerste-week',        changefreq: 'monthly', priority: 0.8 },
+  { path: '/tax-file-number',    changefreq: 'monthly', priority: 0.8 },
+  { path: '/verhalen',           changefreq: 'monthly', priority: 0.5 },
+  { path: '/bronnen',            changefreq: 'monthly', priority: 0.4 },
+  { path: '/over',               changefreq: 'yearly',  priority: 0.3 },
+  { path: '/affiliate-disclosure', changefreq: 'monthly', priority: 0.4 },
+  { path: '/contact',            changefreq: 'yearly',  priority: 0.3 },
+]
+
+const today = new Date().toISOString().slice(0, 10)
+
+const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${routes.map((r) => `  <url>
+    <loc>${SITE}${r.path}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${r.changefreq}</changefreq>
+    <priority>${r.priority.toFixed(1)}</priority>
+  </url>`).join('\n')}
+</urlset>
+`
+
+const out = resolve(__dirname, '..', 'public', 'sitemap.xml')
+writeFileSync(out, xml)
+console.log(`Wrote sitemap with ${routes.length} routes -> ${out}`)
+console.log(`Site URL: ${SITE}`)

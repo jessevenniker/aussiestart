@@ -16,7 +16,7 @@ const banks = [
     network: '4.000+ ATMs en 950+ branches, het grootste filiaal-netwerk',
     pre: true,
     strong: 'Grootste filiaal-netwerk van Australië, ook in regionale gebieden.',
-    weak: 'App en online banking zijn matig vergeleken met ANZ Plus en NAB.',
+    weak: 'App en online banking worden door reviewers vaak lager beoordeeld dan ANZ Plus en NAB (gebruikerssignaal, niet officieel).',
     pick: 'Onder de 30 én veel reizen door regionale gebieden? Dan nooit fees plus altijd een ATM in de buurt.',
     href: 'https://www.commbank.com.au/banking/everyday-account-smart-access.html',
   },
@@ -30,7 +30,7 @@ const banks = [
     network: 'Groot, vergelijkbaar met CommBank',
     pre: true,
     strong: 'Ook actief in Nieuw-Zeeland, je rekening blijft als je doorreist naar NZ.',
-    weak: 'Klantenservice-issues volgens fora de afgelopen jaren.',
+    weak: 'Klantenservice-klachten in fora (gebruikerssignaal, niet officieel benchmark).',
     pick: 'Overweeg je na Australië nog een NZ WHV? Of wil je een moderne mobiele banking-ervaring (ANZ Plus)?',
     href: 'https://www.anz.com.au/personal/bank-accounts/',
   },
@@ -81,8 +81,9 @@ export default function Banking() {
 
       <ArticleLayout aside={<BankingAside />}>
         <p>
-          Een Australische bankrekening is een van de eerste dingen die je regelt na aankomst. Zonder kun je
-          geen salaris ontvangen. Met de verkeerde bank betaal je AUD 50+ per jaar aan onnodige kosten.
+          Een Australische bankrekening is een van de eerste dingen die je regelt na aankomst. Zonder is salaris
+          ontvangen vaak lastig of onpraktisch (Australische werkgevers betalen meestal alleen op lokale BSB+account
+          nummers, niet op IBAN). Met de verkeerde bank betaal je AUD 50+ per jaar aan onnodige kosten.
         </p>
 
         <h2>De korte versie</h2>
@@ -113,6 +114,7 @@ export default function Banking() {
                 <Pair k="Kaart" v={b.card} />
                 <Pair k="ATM-netwerk" v={b.network} />
                 <Pair k="Pre-opening uit NL" v={b.pre ? 'ja' : 'nee'} />
+                <Pair k="Fees gecheckt" v="29 april 2026" />
               </dl>
               <p className="text-sm text-ink/85"><strong className="text-forest">Sterk: </strong>{b.strong}</p>
               <p className="text-sm text-ink/85 mt-1"><strong className="text-ember">Zwak: </strong>{b.weak}</p>

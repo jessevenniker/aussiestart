@@ -14,7 +14,7 @@ export default function Medicare() {
       <PageHeader
         eyebrow="Eerste week · Zorg"
         title="Medicare in Australië voor Nederlanders, wat klopt er echt"
-        intro="Door een verdrag tussen Nederland en Australië heb je tijdens je verblijf recht op Medicare-toegang. Veel mensen weten dit niet en sluiten daardoor onnodige extra dekking af."
+        intro="Door de Reciprocal Health Care Agreement tussen Nederland en Australië kunnen veel Nederlanders tijdens hun verblijf Medicare-toegang krijgen, mits ze aan de voorwaarden voldoen. Veel mensen weten dit niet en sluiten daardoor onnodige extra dekking af."
         lastChecked="29 april 2026"
         source="Services Australia"
       />

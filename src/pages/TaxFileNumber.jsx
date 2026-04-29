@@ -14,16 +14,17 @@ export default function TaxFileNumber() {
       <PageHeader
         eyebrow="Eerste week · Belasting"
         title="Tax File Number (TFN) aanvragen, wat je in je eerste week regelt"
-        intro="Zonder TFN betaal je het hoogste belastingtarief op je salaris (45% of meer). Met TFN betaal je 15% over je eerste AUD 45.000. Aanvragen is gratis, online, en duurt 10 minuten."
+        intro="Geef je geen TFN binnen 28 dagen, dan houdt je werkgever 45% in op je betalingen. Met TFN betaal je 15% over je eerste AUD 45.000. Aanvragen is gratis, online, en duurt 10 minuten."
         lastChecked="29 april 2026"
         source="Australian Taxation Office (ATO)"
       />
 
       <ArticleLayout aside={<TFNAside />}>
         <p>
-          Een TFN is je belastingnummer in Australië. Zonder TFN betaal je het hoogste belastingtarief op je
-          salaris (45% of meer) en kun je later het verschil pas terugvragen. Met TFN betaal je het Working
-          Holiday Maker-tarief van 15% over je eerste AUD 45.000.
+          Een TFN is je belastingnummer in Australië. Geef je geen TFN aan je werkgever binnen 28 dagen na
+          indienst, dan moet je werkgever 45% inhouden op je betalingen, en kun je het verschil pas terugkrijgen
+          via je belastingaangifte. Mét TFN betaal je het Working Holiday Maker-tarief van 15% over je eerste
+          AUD 45.000.
         </p>
         <p>Korte versie: aanvragen is gratis, online, en duurt 10 minuten. Maar er zijn twee dingen die je vooraf moet weten.</p>
 
@@ -114,8 +115,9 @@ export default function TaxFileNumber() {
           vertraagt de eerste. Bel de ATO op 13 28 61 (binnen Australië) als het echt te lang duurt.
         </FAQ>
         <FAQ q="Mag ik werken zonder TFN?">
-          Ja, technisch wel. Maar dan houdt je werkgever het hoogste belastingtarief in (45%+) tot je TFN gegeven
-          hebt. Je krijgt het verschil pas terug bij je belastingaangifte het volgende jaar.
+          Ja. In de eerste 28 dagen na indienst mag je TFN nog ontbreken. Geef je hem na 28 dagen nog niet door,
+          dan moet je werkgever 45% inhouden op je betalingen. Het verschil krijg je pas terug bij je
+          belastingaangifte het volgende jaar.
         </FAQ>
         <FAQ q="Heb ik mijn TFN nodig voor een bankrekening?">
           Niet om de rekening te openen, wel om rente-inhoudingen te voorkomen. Banken houden 47% in op rente als
@@ -153,9 +155,8 @@ export default function TaxFileNumber() {
           </li>
           <li>
             <SourceLink href="https://www.fairwork.gov.au/pay-and-wages/minimum-wages">
-              Fair Work Ombudsman, minimumloon
+              Fair Work Ombudsman, minimumloon (AUD 24,95/uur sinds 1 juli 2025)
             </SourceLink>
-            <span className="text-slate"> · bron voor AUD 24,10/uur backpacker-tarief</span>
           </li>
         </ul>
         <p className="text-sm text-slate mt-4">
@@ -175,7 +176,7 @@ function TFNAside() {
         <li><span className="text-bone/70">Aanvragen:</span> online via ato.gov.au</li>
         <li><span className="text-bone/70">Levering:</span> binnen 28 dagen per post</li>
         <li><span className="text-bone/70">Met TFN:</span> 15% belasting</li>
-        <li><span className="text-bone/70">Zonder TFN:</span> 45%+ belasting</li>
+        <li><span className="text-bone/70">Geen TFN na 28 dagen:</span> 45% inhouding</li>
       </ul>
       <hr className="my-5 border-bone/20" />
       <div className="text-xs uppercase tracking-wider text-ochre mb-2">Verder lezen</div>

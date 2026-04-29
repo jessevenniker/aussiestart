@@ -10,7 +10,7 @@ export const cities = [
     intro: 'Aankomststad voor de meeste WHM\'s. Veel banen in hospitality, drukke hostel-scene rond Central Station.',
     hostels: [
       { name: 'Wake Up! Sydney Central', address: '509 Pitt Street, Sydney CBD',
-        note: 'Naast Central Station, 540 bedden, een van de grootste sociale hostels van Australië. Side Bar in souterrain, daily events.',
+        note: 'Naast Central Station. ~540 bedden, een van de grotere sociale hostels van Sydney. Bar in souterrain, dagelijkse evenementen.',
         tag: 'Sociaal · Groot' },
       { name: 'Sydney Central YHA', address: 'Tegenover Central Station',
         note: 'Rooftop pool, sauna, cinema, gameroom. Mix van 4-pers dorms en private double rooms met ensuite. Goed voor solo en couples.',

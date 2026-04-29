@@ -37,7 +37,7 @@ export default function Visum() {
             ['Leeftijdsgrens Nederlanders', '18 tot en met 30 jaar'],
             ['Geldigheid', '12 maanden vanaf eerste binnenkomst'],
             ['Aanvraagtermijn', 'Tot 12 maanden voor je inreist'],
-            ['Verwerkingstijd', '75% binnen 24 uur, kan oplopen tot 44 dagen'],
+            ['Verwerkingstijd', 'Vaak snel, maar dynamisch. Check actuele DHA processing times'],
             ['Spaargeld dat je moet kunnen aantonen', 'AUD 5.000'],
             ['Aanvraagkanaal', 'ImmiAccount op immi.homeaffairs.gov.au'],
           ]} />
@@ -54,9 +54,10 @@ export default function Visum() {
             formeel studeren.
           </p>
           <p>
-            Er is één werkbeperking om te onthouden: je mag maximaal zes maanden bij dezelfde werkgever blijven.
-            Daarna moet je doorrouleren. Deze regel bestaat omdat het programma als "working holiday" bedoeld is,
-            niet als langdurige werkvisum-route.
+            Eén belangrijke werkbeperking (Condition 8547): je mag standaard maximaal zes maanden bij dezelfde
+            werkgever blijven. Er zijn uitzonderingen, bijvoorbeeld voor werk in verschillende vestigingen of na
+            schriftelijke toestemming van Home Affairs. Check altijd de officiële voorwaarden voor je je
+            verlengt.
           </p>
 
           <h2>Wat het kost, de eerlijke optelling</h2>
@@ -88,21 +89,21 @@ export default function Visum() {
             ['Stap 2', 'Selecteer "Working Holiday Visa (subclass 417)" en kies "First Working Holiday visa". Het formulier vraagt om persoonlijke gegevens, paspoortinfo, reisgeschiedenis, werkverleden, gezondheidsverklaring en karakterverklaring.'],
             ['Stap 3', 'Upload je documenten: een gescand paspoort dat nog minimaal 6 maanden geldig is na je geplande vertrekdatum, en een pasfoto. Soms wordt om aanvullend bewijs gevraagd, zoals een bankafschrift voor de spaarvereiste.'],
             ['Stap 4', 'Betaal AUD 670 via creditcard, debitkaart of PayPal.'],
-            ['Stap 5', 'Wacht op de uitslag. 75% van alle 417-aanvragen wordt binnen 24 uur afgehandeld. In uitzonderingsgevallen, zoals wanneer aanvullende gezondheidschecks nodig zijn, kan het oplopen tot 44 dagen.'],
+            ['Stap 5', 'Wacht op de uitslag. Veel aanvragen worden snel afgehandeld, maar verwerkingstijden veranderen. Check vlak voor je aanvraag de actuele Home Affairs processing times.'],
             ['Stap 6', 'Je krijgt een visum-grant notification via e-mail. Er is geen sticker, geen stempel, geen fysiek document. Je visum is elektronisch gekoppeld aan je paspoortnummer. Print de e-mail uit en sla hem op meerdere plekken op.'],
             ['Stap 7', 'Reis binnen 12 maanden na de grant naar Australië. Vanaf de dag dat je voet aan grond zet, gaat de 12-maanden-klok lopen.'],
           ]} />
 
           <h2>Vier veelgemaakte fouten</h2>
           <Pitfall n="1" title="Te laat aanvragen.">
-            Mensen denken dat je het op het laatste moment kan regelen omdat 75% binnen 24 uur wordt verwerkt.
-            Dat klopt, maar als jouw aanvraag bij de andere 25% valt en je hebt nog 5 dagen tot je vlucht,
-            sta je in de problemen. Vraag minimaal 4 tot 6 weken voor je vertrek aan.
+            Veel aanvragen worden snel verwerkt, maar verwerkingstijden zijn dynamisch. Als jouw aanvraag bij
+            de uitlopers valt en je hebt nog 5 dagen tot je vlucht, sta je in de problemen. Vraag minimaal 4
+            tot 6 weken voor je vertrek aan.
           </Pitfall>
-          <Pitfall n="2" title="Paspoort dat niet lang genoeg geldig is.">
-            Australië wil dat je paspoort op het moment van inreis nog minimaal 6 maanden geldig is. Met een
-            12-maanden visum betekent dat dat je paspoort minstens 18 maanden vanaf de aanvraag geldig moet zijn.
-            Anders eerst paspoort vernieuwen.
+          <Pitfall n="2" title="Paspoort niet ruim genoeg geldig.">
+            Zorg dat je paspoort minstens je hele verblijf geldig blijft. Sommige luchtvaartmaatschappijen of
+            transitlanden hanteren strengere regels (bv. 6 maanden geldigheid bij inreis). Check de actuele
+            voorwaarden van je airline en eventuele transitlanden vóór je boekt.
           </Pitfall>
           <Pitfall n="3" title="Verkeerde geboortedatum invullen.">
             Klinkt dom, gebeurt vaker dan je denkt. Het systeem doet een automatische check op je leeftijd op de

@@ -63,6 +63,13 @@ export default function Loon() {
           In de praktijk verdienen backpackers in een café, hostel, bouwplaats, fruitveld of supermarkt vaak
           AUD 28 tot AUD 35 per uur. Een aanzienlijk verschil met "minimumloon" zoals je het uit Nederland kent.
         </p>
+        <Callout kind="info" title="Awards kunnen afwijken">
+          De cijfers hierboven zijn gebaseerd op de National Minimum Wage. Veel sectoren vallen onder een
+          "modern award" met eigen tarieven: hospitality (Hospitality Industry Award), retail (General Retail
+          Industry Award), bouw (Building and Construction Award) etc. Award-tarieven zijn meestal hoger dan
+          de minimum, soms gelijk. Je werkgever moet je vertellen onder welk award je valt. Lookup via{' '}
+          <SourceLink href="https://www.fairwork.gov.au/employment-conditions/awards/find-my-award">Fair Work, Find my award</SourceLink>.
+        </Callout>
 
         <h2>Penalty rates, extra voor weekend en feestdagen</h2>
         <p>Bovenop casual loading komen penalty rates: extra betaling voor uren buiten standaard werktijden.</p>
@@ -111,8 +118,8 @@ export default function Loon() {
         <h2>Superannuation, pensioen dat je terugkrijgt</h2>
         <p>
           Sinds 1 juli 2025 is je werkgever verplicht <strong>12% van je loon</strong> in een super-fonds te
-          storten, bovenop je salaris. Voorheen was dat 11,5%. Dit geldt als je meer dan AUD 450 per maand
-          verdient.
+          storten, bovenop je salaris (was 11,5%). De oude AUD 450/maand-drempel is per 1 juli 2022
+          afgeschaft, dus vrijwel elke werknemer in loondienst krijgt super.
         </p>
         <p>
           Belangrijk voor jou als WHM: dit geld kun je terugkrijgen wanneer je definitief vertrekt uit Australië
@@ -269,7 +276,7 @@ function LoonAside() {
         <li><span className="text-bone/70">Zondag (casual):</span> ≈AUD 54</li>
         <li><span className="text-bone/70">WHM-belasting:</span> 15% tot 45k</li>
         <li><span className="text-bone/70">Super:</span> 12%</li>
-        <li><span className="text-bone/70">Super terug (DASP):</span> 35%</li>
+        <li><span className="text-bone/70">DASP-belasting:</span> 65% (netto terug ≈35%)</li>
       </ul>
       <hr className="my-5 border-bone/20" />
       <div className="text-xs uppercase tracking-wider text-ochre mb-2">Verder lezen</div>
