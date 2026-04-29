@@ -55,7 +55,6 @@ const MIN_SUCCESS_RATE = 0.9
 // Routes met noindex die we wel willen prerenderen voor unieke title/description
 // (anders krijgt elke route de SPA-shell met homepage-title bij directe load).
 const EXTRA_ROUTES = [
-  '/wonen',
   '/verhalen',
   '/404',
 ]

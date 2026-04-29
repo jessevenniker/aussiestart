@@ -16,8 +16,8 @@ const SITE = process.env.SITE_URL
         : null)
   || 'https://aussiestart.vercel.app'
 
-// Pagina's met echte content. Placeholders (Wonen, Verhalen) staan op
-// noindex en horen niet in de sitemap totdat ze inhoud hebben.
+// Pagina's met echte content. Placeholder (Verhalen) staat op noindex en
+// hoort niet in de sitemap totdat hij inhoud heeft.
 const routes = [
   { path: '/',                     changefreq: 'weekly',  priority: 1.0 },
   { path: '/begin-hier',           changefreq: 'monthly', priority: 0.9 },
@@ -27,6 +27,7 @@ const routes = [
   { path: '/loon',                 changefreq: 'monthly', priority: 0.8 },
   { path: '/banking',              changefreq: 'monthly', priority: 0.8 },
   { path: '/werk',                 changefreq: 'monthly', priority: 0.8 },
+  { path: '/wonen',                changefreq: 'monthly', priority: 0.8 },
   { path: '/hostels',              changefreq: 'monthly', priority: 0.8 },
   { path: '/esim',                 changefreq: 'monthly', priority: 0.7 },
   { path: '/verzekering',          changefreq: 'monthly', priority: 0.9 },
