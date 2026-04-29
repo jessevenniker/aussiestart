@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { Steps, Callout, FAQ, FactsTable, ArticleLayout } from '../components/Article.jsx'
+import SourceLink from '../components/SourceLink.jsx'
 
 export default function TaxFileNumber() {
   return (
@@ -128,12 +129,38 @@ export default function TaxFileNumber() {
         </FAQ>
 
         <h2>Bronnen</h2>
-        <ul className="text-sm">
-          <li>Australian Taxation Office, TFN aanvragen voor temporary visitors</li>
-          <li>Australian Taxation Office, Working Holiday Makers belastingpagina</li>
-          <li>Australian Taxation Office, actuele tarieven voor working holiday makers (belastingjaar 2025-2026)</li>
-          <li>myGov / Services Australia, voor het vinden van je TFN als je hem ooit had: my.gov.au</li>
+        <ul className="text-sm space-y-1.5">
+          <li>
+            <SourceLink href="https://www.ato.gov.au/individuals-and-families/tax-file-number/apply-for-a-tfn/foreign-passport-holders-permanent-migrants-and-temporary-visitors-tfn-application">
+              ATO, TFN aanvragen voor temporary visitors
+            </SourceLink>
+          </li>
+          <li>
+            <SourceLink href="https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers">
+              ATO, Working Holiday Makers belastingpagina
+            </SourceLink>
+            <span className="text-slate"> · tarieven 2025-2026</span>
+          </li>
+          <li>
+            <SourceLink href="https://www.ato.gov.au/forms-and-instructions/tfn-declaration">
+              ATO, TFN declaration formulier
+            </SourceLink>
+          </li>
+          <li>
+            <SourceLink href="https://my.gov.au/en/services/work/currently-employed/tax-when-you-work/getting-a-tax-file-number">
+              myGov, TFN-portaal (voor het terugvinden van je TFN)
+            </SourceLink>
+          </li>
+          <li>
+            <SourceLink href="https://www.fairwork.gov.au/pay-and-wages/minimum-wages">
+              Fair Work Ombudsman, minimumloon
+            </SourceLink>
+            <span className="text-slate"> · bron voor AUD 24,10/uur backpacker-tarief</span>
+          </li>
         </ul>
+        <p className="text-sm text-slate mt-4">
+          Volledig bronnen-overzicht op de <Link to="/bronnen" className="text-ember underline">bronnen-pagina</Link>.
+        </p>
       </ArticleLayout>
     </>
   )

@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { FactsTable, Steps, FAQ, ArticleLayout } from '../components/Article.jsx'
+import SourceLink from '../components/SourceLink.jsx'
 
 export default function Visum() {
   return (
@@ -154,12 +155,35 @@ export default function Visum() {
           </FAQ>
 
           <h2>Bronnen</h2>
-          <ul className="text-sm">
-            <li>Australian Department of Home Affairs, officiële visumpagina 417 (laatst geüpdatet 26 februari 2026)</li>
-            <li>Australian Department of Home Affairs, pagina specified work voor 417</li>
-            <li>Australian Taxation Office, Working Holiday Makers tax info</li>
-            <li>Australian Department of Home Affairs, Visa Application Charge update per 1 juli 2025 (verhoging van AUD 635 naar AUD 670)</li>
+          <ul className="text-sm space-y-1.5">
+            <li>
+              <SourceLink href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417">
+                Department of Home Affairs, officiële visumpagina 417
+              </SourceLink>
+              <span className="text-slate"> · laatst geüpdatet 26 februari 2026</span>
+            </li>
+            <li>
+              <SourceLink href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/specified-work">
+                DHA, specified work voor 88-dagen-regel
+              </SourceLink>
+            </li>
+            <li>
+              <SourceLink href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417/6-month-work-limitation">
+                DHA, 6-month work limitation (Condition 8547)
+              </SourceLink>
+            </li>
+            <li>
+              <SourceLink href="https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/coming-to-australia/working-holiday-makers">
+                Australian Taxation Office, Working Holiday Makers tax info
+              </SourceLink>
+            </li>
+            <li className="text-slate">
+              Visa Application Charge: verhoogd van AUD 635 naar AUD 670 per 1 juli 2025 (DHA aankondiging).
+            </li>
           </ul>
+          <p className="text-sm text-slate mt-4">
+            Volledig bronnen-overzicht op de <Link to="/bronnen" className="text-ember underline">bronnen-pagina</Link>.
+          </p>
       </ArticleLayout>
     </>
   )

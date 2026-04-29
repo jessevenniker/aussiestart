@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { Steps, Callout, FAQ, ArticleLayout } from '../components/Article.jsx'
+import SourceLink from '../components/SourceLink.jsx'
 
 export default function Medicare() {
   return (
@@ -146,14 +147,28 @@ export default function Medicare() {
         </FAQ>
 
         <h2>Bronnen</h2>
-        <p className="text-sm">
-          Alle informatie op deze pagina is gebaseerd op de officiële pagina van Services Australia voor bezoekers
-          uit Nederland: servicesaustralia.gov.au/reciprocal-health-care-agreements-visiting-from-netherlands.
-          Page last updated bij Services Australia: 17 maart 2025. Door ons opnieuw gecontroleerd: 29 april 2026.
-        </p>
-        <p className="text-sm">
+        <ul className="text-sm space-y-1.5">
+          <li>
+            <SourceLink href="https://www.servicesaustralia.gov.au/reciprocal-health-care-agreements-visiting-from-netherlands">
+              Services Australia, RHCA voor bezoekers uit Nederland
+            </SourceLink>
+            <span className="text-slate"> · pagina laatst geüpdatet 17 maart 2025</span>
+          </li>
+          <li>
+            <SourceLink href="https://www.servicesaustralia.gov.au/when-reciprocal-health-care-agreements-apply-and-you-visit-australia">
+              Services Australia, RHCA-overzicht alle landen
+            </SourceLink>
+          </li>
+          <li>
+            <SourceLink href="https://www.servicesaustralia.gov.au/reciprocal-health-care-agreement-visiting-netherlands">
+              Services Australia, RHCA bij bezoek aan Nederland (omgekeerd)
+            </SourceLink>
+          </li>
+        </ul>
+        <p className="text-sm text-slate mt-4">
           Mocht een Australische ziekenhuisbalie of arts onbekend zijn met de RHCA-regeling voor Nederlanders,
-          vraag ze dan de pagina hierboven op te zoeken. Het verdrag is officieel en geldig.
+          vraag ze dan de eerste pagina hierboven op te zoeken. Het verdrag is officieel en geldig. Volledig
+          bronnen-overzicht op de <Link to="/bronnen" className="text-ember underline">bronnen-pagina</Link>.
         </p>
       </ArticleLayout>
     </>
