@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-bone text-ink font-sans antialiased;
+    font-feature-settings: 'kern', 'liga', 'calt';
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+    letter-spacing: -0.01em;
+  }
+  ::selection {
+    background: #d97a3a;
+    color: #fffbf2;
+  }
+}
+
+@layer components {
+  .container-tight {
+    @apply max-w-5xl mx-auto px-5 sm:px-6;
+  }
+  .container-wide {
+    @apply max-w-6xl mx-auto px-5 sm:px-6;
+  }
+  .prose-custom {
+    @apply max-w-reading text-ink/90 leading-relaxed;
+  }
+  .prose-custom p { @apply mb-4; }
+  .prose-custom h2 { @apply text-2xl mt-10 mb-3 text-forest; }
+  .prose-custom h3 { @apply text-xl mt-8 mb-2 text-forest; }
+  .prose-custom a { @apply text-ember underline underline-offset-2 hover:text-sunset; }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-ember text-bone px-5 py-3 rounded-full font-medium hover:bg-sunset transition-colors;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 border border-forest/30 text-forest px-5 py-3 rounded-full font-medium hover:bg-forest hover:text-bone transition-colors;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-ember;
+  }
+}
