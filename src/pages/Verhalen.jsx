@@ -5,7 +5,7 @@ import Placeholder from '../components/Placeholder.jsx'
 export default function Verhalen() {
   return (
     <>
-      <Helmet><title>Verhalen — Aussiestart</title></Helmet>
+      <Helmet><title>Verhalen, Aussiestart</title></Helmet>
       <PageHeader
         eyebrow="Verhalen"
         title="Mensen die er waren, en wat ze nu weten"

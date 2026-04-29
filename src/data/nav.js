@@ -21,7 +21,7 @@ export const steps = [
   {
     n: '01',
     title: 'Vraag het visum aan',
-    blurb: 'Subclass 417, online, AUD 670. Goedkeuring meestal binnen 24 uur — maar er zijn vier valkuilen die mensen weken kosten.',
+    blurb: 'Subclass 417, online, AUD 670. Goedkeuring meestal binnen 24 uur, maar er zijn vier valkuilen die mensen weken kosten.',
     cta: 'Lees de visum-gids',
     path: '/visum',
     tone: 'forest',
@@ -37,7 +37,7 @@ export const steps = [
   {
     n: '03',
     title: 'Kies een verzekering',
-    blurb: 'SafetyWing, JoHo, World Nomads, Allianz. Vier polissen, eerlijk vergeleken — inclusief wat ze niet uitkeren.',
+    blurb: 'SafetyWing, JoHo, World Nomads, Allianz. Vier polissen, eerlijk vergeleken, inclusief wat ze niet uitkeren.',
     cta: 'Vergelijk polissen',
     path: '/verzekering',
     tone: 'sunset',

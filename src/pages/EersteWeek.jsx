@@ -46,7 +46,7 @@ export default function EersteWeek() {
   return (
     <>
       <Helmet>
-        <title>Eerste week in Australië — wat regel je wanneer | Aussiestart</title>
+        <title>Eerste week in Australië, wat regel je wanneer | Aussiestart</title>
         <meta name="description" content="Dag-voor-dag-lijst voor je eerste week. TFN, Medicare, bankrekening, SIM, OPAL. Zo zit je niet in week 4 nog rond te bellen." />
       </Helmet>
       <PageHeader
@@ -55,11 +55,24 @@ export default function EersteWeek() {
         intro="TFN, Medicare, bankrekening, SIM-kaart, OPAL-pas. Een korte lijst zodat je niet in week 4 nog rondrent."
       />
 
+      <figure className="container-wide pt-8 pb-4">
+        <div className="aspect-[16/9] sm:aspect-[21/9] overflow-hidden rounded-2xl">
+          <img
+            src="/img/foto/IMG_1008.jpg"
+            alt="Sydney Opera House van onderen, blauwe lucht"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <figcaption className="text-xs text-slate mt-2 px-1">
+          Sydney Opera House, dag twee. Tussen Circular Quay en Wynyard zit alles wat je in week 1 nodig hebt.
+        </figcaption>
+      </figure>
+
       <ArticleLayout aside={<EersteWeekAside />}>
         <p>
           De eerste week is de week die het verschil maakt tussen "ik kom binnen, ik werk binnen 14 dagen" en
           "ik krijg pas in week 5 mijn eerste payslip omdat ik geen TFN had". Hieronder de zes dingen die
-          praktisch iedereen in zijn eerste week regelt — en in welke volgorde.
+          praktisch iedereen in zijn eerste week regelt, en in welke volgorde.
         </p>
 
         <h2>De zes dingen, op volgorde</h2>
@@ -116,7 +129,7 @@ function EersteWeekAside() {
     <div className="bg-forest text-bone rounded-2xl p-5">
       <div className="text-xs uppercase tracking-wider text-ochre mb-2">Belangrijkste 2</div>
       <p className="text-sm leading-relaxed mb-4">
-        Veruit de twee belangrijkste taken — beide gratis, beide moeten gebeuren in week 1.
+        Veruit de twee belangrijkste taken, beide gratis, beide moeten gebeuren in week 1.
       </p>
       <ul className="space-y-2 text-sm">
         <li><Link to="/tax-file-number" className="text-ochre underline underline-offset-4">Tax File Number →</Link></li>

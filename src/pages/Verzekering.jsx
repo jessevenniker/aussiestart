@@ -5,7 +5,7 @@ import Placeholder from '../components/Placeholder.jsx'
 export default function Verzekering() {
   return (
     <>
-      <Helmet><title>Reisverzekering working holiday — 4 polissen vergeleken</title></Helmet>
+      <Helmet><title>Reisverzekering working holiday, 4 polissen vergeleken</title></Helmet>
       <PageHeader
         eyebrow="Verzekering"
         title="Vier polissen, eerlijk vergeleken"

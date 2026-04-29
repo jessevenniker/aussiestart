@@ -5,7 +5,7 @@ import Placeholder from '../components/Placeholder.jsx'
 export default function BeginHier() {
   return (
     <>
-      <Helmet><title>Begin hier — Aussiestart</title></Helmet>
+      <Helmet><title>Begin hier, Aussiestart</title></Helmet>
       <PageHeader
         eyebrow="Startgids"
         title="14 stappen, in volgorde"

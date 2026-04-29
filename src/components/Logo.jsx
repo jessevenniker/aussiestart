@@ -1,5 +1,5 @@
 /**
- * Logo — italic serif wordmark "aussiestart" met drie gold-wave swashes.
+ * Logo, italic serif wordmark "aussiestart" met drie gold-wave swashes.
  * Stylebron: brand-mockup met "G'day, backpacker"-uitstraling.
  */
 export default function Logo({ size = 'md', tagline = false, mark = false }) {
@@ -27,7 +27,7 @@ export default function Logo({ size = 'md', tagline = false, mark = false }) {
           className="uppercase tracking-[0.32em] text-ochre mt-2"
           style={{ fontSize: s.tagline, fontWeight: 500 }}
         >
-          — G'day, backpacker —
+          G'day, backpacker
         </span>
       )}
     </span>
@@ -35,7 +35,7 @@ export default function Logo({ size = 'md', tagline = false, mark = false }) {
 }
 
 function Waves({ height = 8, marginTop = 6 }) {
-  // Drie zachte wave-arcs — vorm: ⌒ ⌒ ⌒
+  // Drie zachte wave-arcs, vorm: ⌒ ⌒ ⌒
   const w = height * 8
   const h = height
   return (

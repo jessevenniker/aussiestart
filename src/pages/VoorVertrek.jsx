@@ -5,7 +5,7 @@ import Placeholder from '../components/Placeholder.jsx'
 export default function VoorVertrek() {
   return (
     <>
-      <Helmet><title>Voor vertrek — Aussiestart</title></Helmet>
+      <Helmet><title>Voor vertrek, Aussiestart</title></Helmet>
       <PageHeader
         eyebrow="Voorbereiding"
         title="Wat je 6, 3 en 1 maand voor vertrek moet regelen"

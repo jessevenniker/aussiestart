@@ -3,13 +3,35 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero.jsx'
 import FactBar from '../components/FactBar.jsx'
 import StepCard from '../components/StepCard.jsx'
+import PhotoStrip from '../components/PhotoStrip.jsx'
 import { steps } from '../data/nav.js'
+
+const galleryPhotos = [
+  {
+    src: '/img/foto/IMG_7673.jpg',
+    alt: 'Zonsondergang boven Tomaree Head, NSW kustlijn',
+    title: 'Tomaree, NSW',
+    caption: 'Drie uur boven Sydney. Goedkoop kamperen, leeg strand.',
+  },
+  {
+    src: '/img/foto/IMG_3450.jpg',
+    alt: 'Three Sisters in de Blue Mountains, NSW',
+    title: 'Blue Mountains',
+    caption: 'Dagtrip vanuit Sydney. Trein, geen auto nodig.',
+  },
+  {
+    src: '/img/foto/IMG_7492.jpg',
+    alt: 'Zandduinen aan de Australische kust, blauwe lucht',
+    title: 'Stockton Dunes',
+    caption: 'Sandboarden tussen werkdagen door.',
+  },
+]
 
 export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Aussiestart — Working holiday Australië, zelf geregeld</title>
+        <title>Aussiestart, Working holiday Australië, zelf geregeld</title>
       </Helmet>
       <Hero />
       <FactBar />
@@ -35,7 +57,7 @@ export default function Home() {
             </h2>
             <p className="mt-5 text-ink/80 leading-relaxed max-w-prose">
               Bemiddelingsbureaus verkopen werkvisum-pakketten van €549 tot €2.050.
-              Het meeste daarvan kun je zelf — sneller en goedkoper. Aussiestart is
+              Het meeste daarvan kun je zelf, sneller en goedkoper. Aussiestart is
               een onafhankelijk naslagwerk dat je door de stappen heen helpt, met
               eerlijke cijfers en de tips die bureaus je niet vertellen.
             </p>
@@ -64,6 +86,13 @@ export default function Home() {
         </div>
       </section>
 
+      <PhotoStrip
+        eyebrow="Wat je tegenkomt"
+        title="Plekken die niet in een bemiddelaar-brochure staan"
+        intro="Geen stockfoto's, geen Sydney Opera House voor de derde keer. Plekken waar je ook echt langskomt als je het zelf regelt."
+        items={galleryPhotos}
+      />
+
       <section className="container-wide py-16">
         <div className="max-w-3xl">
           <div className="eyebrow mb-3">Volgende stap</div>
@@ -72,7 +101,7 @@ export default function Home() {
           </h2>
           <p className="mt-4 text-ink/80 max-w-prose">
             De startgids loopt je in 14 stappen door wat je 6, 3 en 1 maand voor vertrek
-            moet regelen — van visum en verzekering tot je eerste week in Sydney.
+            moet regelen, van visum en verzekering tot je eerste week in Sydney.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link to="/begin-hier" className="btn-primary">

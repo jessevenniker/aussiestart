@@ -7,12 +7,12 @@ export default function Medicare() {
   return (
     <>
       <Helmet>
-        <title>Medicare in Australië voor Nederlanders — Aussiestart</title>
+        <title>Medicare in Australië voor Nederlanders, Aussiestart</title>
         <meta name="description" content="Door het verdrag tussen Nederland en Australië heb je tijdens je WHV recht op Medicare. Wat dekt het wel, wat niet, en hoe schrijf je je in." />
       </Helmet>
       <PageHeader
         eyebrow="Eerste week · Zorg"
-        title="Medicare in Australië voor Nederlanders — wat klopt er echt"
+        title="Medicare in Australië voor Nederlanders, wat klopt er echt"
         intro="Door een verdrag tussen Nederland en Australië heb je tijdens je verblijf recht op Medicare-toegang. Veel mensen weten dit niet en sluiten daardoor onnodige extra dekking af."
         lastChecked="29 april 2026"
         source="Services Australia"

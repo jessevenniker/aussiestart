@@ -5,7 +5,7 @@ import Placeholder from '../components/Placeholder.jsx'
 export default function Bronnen() {
   return (
     <>
-      <Helmet><title>Bronnen & verantwoording — Aussiestart</title></Helmet>
+      <Helmet><title>Bronnen & verantwoording, Aussiestart</title></Helmet>
       <PageHeader
         eyebrow="Verantwoording"
         title="Bronnen en hoe we cijfers checken"

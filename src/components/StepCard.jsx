@@ -19,7 +19,7 @@ export default function StepCard({ n, title, blurb, cta, path, tone = 'forest' }
       className={`group rounded-2xl p-6 sm:p-7 flex flex-col h-full transition-transform hover:-translate-y-0.5 ${tones[tone]}`}
     >
       <div className="flex items-center justify-between mb-4">
-        <span className="text-xs uppercase tracking-[0.18em] opacity-80">— Stap {n}</span>
+        <span className="text-xs uppercase tracking-[0.18em] opacity-80">Stap {n}</span>
         <span className="w-7 h-7 rounded-full border border-current/40 flex items-center justify-center text-xs">
           ↗
         </span>

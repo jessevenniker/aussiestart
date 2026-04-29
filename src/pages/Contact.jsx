@@ -4,7 +4,7 @@ import PageHeader from '../components/PageHeader.jsx'
 export default function Contact() {
   return (
     <>
-      <Helmet><title>Contact — Aussiestart</title></Helmet>
+      <Helmet><title>Contact, Aussiestart</title></Helmet>
       <PageHeader
         eyebrow="Contact"
         title="Iets te vragen, te corrigeren, of te delen?"
@@ -13,15 +13,15 @@ export default function Contact() {
       <section className="container-wide py-12">
         <div className="prose-custom">
           <p>
-            E-mail: <a href="mailto:hoi@aussiestart.nl">hoi@aussiestart.nl</a> (placeholder — domein nog te activeren).
+            E-mail: <a href="mailto:hoi@aussiestart.nl">hoi@aussiestart.nl</a> (placeholder, domein nog te activeren).
           </p>
           <p>
             Wil je je verhaal delen? Korte profielschets, bestemming, duur en drie inzichten
             volstaan. We redigeren mee, jij keurt goed voor publicatie.
           </p>
           <p>
-            Klopt er een cijfer of bron niet? Stuur de correctie met bronvermelding —
-            we updaten meestal binnen een week.
+            Klopt er een cijfer of bron niet? Stuur de correctie met bronvermelding,
+            dan updaten we meestal binnen een week.
           </p>
         </div>
       </section>

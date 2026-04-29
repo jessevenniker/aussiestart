@@ -4,7 +4,7 @@ import PageHeader from '../components/PageHeader.jsx'
 export default function AffiliateDisclosure() {
   return (
     <>
-      <Helmet><title>Affiliate-disclosure — Aussiestart</title></Helmet>
+      <Helmet><title>Affiliate-disclosure, Aussiestart</title></Helmet>
       <PageHeader
         eyebrow="Transparantie"
         title="Hoe Aussiestart geld verdient"
@@ -26,7 +26,7 @@ export default function AffiliateDisclosure() {
           </p>
           <ul>
             <li>De service moet meetbaar beter zijn dan de gangbare alternatieven, of evident gelijkwaardig.</li>
-            <li>Voorwaarden moeten transparant zijn — geen verborgen automatische verlengingen.</li>
+            <li>Voorwaarden moeten transparant zijn, geen verborgen automatische verlengingen.</li>
             <li>Klantenservice moet bereikbaar zijn voor Nederlandstalige klanten.</li>
             <li>We accepteren geen deals met bemiddelaars die werkvisum-pakketten verkopen.</li>
           </ul>

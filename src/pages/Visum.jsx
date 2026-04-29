@@ -7,12 +7,12 @@ export default function Visum() {
   return (
     <>
       <Helmet>
-        <title>Working Holiday Visum Australië aanvragen 2026 — Aussiestart</title>
+        <title>Working Holiday Visum Australië aanvragen 2026, Aussiestart</title>
         <meta name="description" content="Subclass 417 voor Nederlanders. AUD 670, online via ImmiAccount, voor 18 t/m 30. Stap voor stap, met de vier valkuilen die mensen weken vertraging kosten." />
       </Helmet>
       <PageHeader
         eyebrow="Bestemming · Australië"
-        title="Working Holiday Visum aanvragen — alles wat klopt in 2026"
+        title="Working Holiday Visum aanvragen, alles wat klopt in 2026"
         intro="Subclass 417 voor Nederlanders. AUD 670, online, voor 18 t/m 30. We lopen je door de aanvraag, bewijsstukken en de vier valkuilen die mensen weken vertraging kosten."
         lastChecked="29 april 2026"
         source="Department of Home Affairs"
@@ -58,7 +58,7 @@ export default function Visum() {
             niet als langdurige werkvisum-route.
           </p>
 
-          <h2>Wat het kost — de eerlijke optelling</h2>
+          <h2>Wat het kost, de eerlijke optelling</h2>
           <p>
             De officiële aanvraagkosten zijn <strong>AUD 670</strong>. Dat is wat je betaalt aan de Australische
             overheid via ImmiAccount. Maar dat is niet het hele verhaal.
@@ -141,7 +141,7 @@ export default function Visum() {
             voordat je betaalt.
           </FAQ>
           <FAQ q="Hoe lang voor mijn vertrek moet ik aanvragen?">
-            Vier tot zes weken voor vertrek is een veilige marge. Eerder mag ook — het visum is geldig vanaf grant
+            Vier tot zes weken voor vertrek is een veilige marge. Eerder mag ook, het visum is geldig vanaf grant
             tot 12 maanden later voor inreis.
           </FAQ>
           <FAQ q="Mag ik tijdens mijn 417-visum studeren?">
@@ -155,10 +155,10 @@ export default function Visum() {
 
           <h2>Bronnen</h2>
           <ul className="text-sm">
-            <li>Australian Department of Home Affairs — officiële visumpagina 417 (laatst geüpdatet 26 februari 2026)</li>
-            <li>Australian Department of Home Affairs — pagina specified work voor 417</li>
-            <li>Australian Taxation Office — Working Holiday Makers tax info</li>
-            <li>Australian Department of Home Affairs — Visa Application Charge update per 1 juli 2025 (verhoging van AUD 635 naar AUD 670)</li>
+            <li>Australian Department of Home Affairs, officiële visumpagina 417 (laatst geüpdatet 26 februari 2026)</li>
+            <li>Australian Department of Home Affairs, pagina specified work voor 417</li>
+            <li>Australian Taxation Office, Working Holiday Makers tax info</li>
+            <li>Australian Department of Home Affairs, Visa Application Charge update per 1 juli 2025 (verhoging van AUD 635 naar AUD 670)</li>
           </ul>
       </ArticleLayout>
     </>
@@ -182,7 +182,7 @@ function NextSteps() {
     <div className="bg-forest text-bone rounded-2xl p-5">
       <div className="text-xs uppercase tracking-wider text-ochre mb-2">Volgende stap</div>
       <p className="text-sm leading-relaxed mb-4">
-        Visum geregeld? Bereken wat een working holiday je écht kost — niet de €5.000 die bemiddelaars zeggen.
+        Visum geregeld? Bereken wat een working holiday je écht kost, niet de €5.000 die bemiddelaars zeggen.
       </p>
       <Link to="/kosten" className="inline-flex items-center gap-2 text-ochre underline underline-offset-4 text-sm">
         Open de kosten-calculator →

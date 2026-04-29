@@ -33,13 +33,13 @@ export default function Over() {
           <p>
             Via affiliate. Als je een verzekering, banking-account of camperhuur boekt via een
             link op deze site, krijgen we een commissie van de aanbieder. Die commissie betaal je
-            niet — de prijs is hetzelfde of je nu via ons of direct boekt. Hoe we partners
+            niet, de prijs is hetzelfde of je nu via ons of direct boekt. Hoe we partners
             selecteren staat openlijk op de{' '}
             <Link to="/affiliate-disclosure">disclosure-pagina</Link>.
           </p>
           <h2>Wie er achter zit</h2>
           <p>
-            Aussiestart is in 2026 opgezet als zusterproject van StageStart Curaçao —
+            Aussiestart is in 2026 opgezet als zusterproject van StageStart Curaçao,
             een vergelijkbaar onafhankelijk platform voor stagiairs op Curaçao. Bewust niet
             onder dezelfde merknaam, omdat het verdienmodel anders is.
           </p>

@@ -7,12 +7,12 @@ export default function TaxFileNumber() {
   return (
     <>
       <Helmet>
-        <title>Tax File Number aanvragen — Working Holiday Australië</title>
+        <title>Tax File Number aanvragen, Working Holiday Australië</title>
         <meta name="description" content="TFN aanvragen is gratis, online en duurt 10 minuten. Zonder TFN betaal je 45% belasting i.p.v. 15%. Stappenplan + de twee dingen die je vooraf moet weten." />
       </Helmet>
       <PageHeader
         eyebrow="Eerste week · Belasting"
-        title="Tax File Number (TFN) aanvragen — wat je in je eerste week regelt"
+        title="Tax File Number (TFN) aanvragen, wat je in je eerste week regelt"
         intro="Zonder TFN betaal je het hoogste belastingtarief op je salaris (45% of meer). Met TFN betaal je 15% over je eerste AUD 45.000. Aanvragen is gratis, online, en duurt 10 minuten."
         lastChecked="29 april 2026"
         source="Australian Taxation Office (ATO)"
@@ -43,7 +43,7 @@ export default function TaxFileNumber() {
 
         <h2>Stap voor stap</h2>
         <Steps items={[
-          ['Stap 1', 'Ga naar de officiële ATO-pagina: ato.gov.au/individuals-and-families/tax-file-number/apply-for-a-tfn. Belangrijk: er bestaan derde-partij websites die je tegen betaling helpen met de aanvraag. Doe dat niet — de ATO-aanvraag is gratis en niet ingewikkeld.'],
+          ['Stap 1', 'Ga naar de officiële ATO-pagina: ato.gov.au/individuals-and-families/tax-file-number/apply-for-a-tfn. Belangrijk: er bestaan derde-partij websites die je tegen betaling helpen met de aanvraag. Doe dat niet, de ATO-aanvraag is gratis en niet ingewikkeld.'],
           ['Stap 2', 'Kies "Permanent migrants and temporary visitors" (jij valt onder de tweede categorie). Klik door naar de IAR (Individual Auto Registration).'],
           ['Stap 3', 'De eerste pagina herinnert je eraan dat je in Australië moet zijn, dat je TFN-nummer voor het leven is, en dat je contact kunt opnemen met de ATO bij vragen.'],
           ['Stap 4', 'Vul je persoonlijke gegevens in zoals ze in je paspoort staan. Eén tikfout en de match met de Department of Home Affairs (waar je visum is geregistreerd) faalt, en je aanvraag stagneert.'],
@@ -129,10 +129,10 @@ export default function TaxFileNumber() {
 
         <h2>Bronnen</h2>
         <ul className="text-sm">
-          <li>Australian Taxation Office — TFN aanvragen voor temporary visitors</li>
-          <li>Australian Taxation Office — Working Holiday Makers belastingpagina</li>
-          <li>Australian Taxation Office — actuele tarieven voor working holiday makers (belastingjaar 2025-2026)</li>
-          <li>myGov / Services Australia — voor het vinden van je TFN als je hem ooit had: my.gov.au</li>
+          <li>Australian Taxation Office, TFN aanvragen voor temporary visitors</li>
+          <li>Australian Taxation Office, Working Holiday Makers belastingpagina</li>
+          <li>Australian Taxation Office, actuele tarieven voor working holiday makers (belastingjaar 2025-2026)</li>
+          <li>myGov / Services Australia, voor het vinden van je TFN als je hem ooit had: my.gov.au</li>
         </ul>
       </ArticleLayout>
     </>
