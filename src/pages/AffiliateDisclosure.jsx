@@ -58,15 +58,40 @@ export default function AffiliateDisclosure() {
             <li>Cookie: sessie-gebaseerd</li>
             <li>Te zien op: <a href="/banking">banking-pagina</a></li>
           </ul>
-          <h3>In voorbereiding</h3>
-          <p>Hieronder partners waarvan we de aanvraag of integratie nog gaan doen.</p>
+          <h3>Viator (sinds 29 april 2026)</h3>
+          <ul>
+            <li>Programma: Viator Affiliate Program (PID P00219714)</li>
+            <li>Commissie: 8% van boekingswaarde</li>
+            <li>Cookie: 30 dagen</li>
+            <li>Te zien op: stad-specifieke pagina's met activiteiten (in opbouw)</li>
+          </ul>
+          <h3>GetYourGuide (sinds 29 april 2026)</h3>
+          <ul>
+            <li>Programma: GetYourGuide Share &amp; Earn</li>
+            <li>Commissie: 8% per kwalificerende boeking</li>
+            <li>Cookie: 31 dagen</li>
+            <li>Te zien op: stad-specifieke pagina's met activiteiten (in opbouw)</li>
+          </ul>
+          <h3>Amazon NL (sinds 29 april 2026)</h3>
+          <ul>
+            <li>Programma: Amazon Associates NL (tag: australiestar-21)</li>
+            <li>Commissie: 1-9% per productcategorie</li>
+            <li>Cookie: 24 uur (90 dagen bij in-winkelwagen)</li>
+            <li>Te zien op: voor-vertrek-pagina (packing list, in opbouw)</li>
+          </ul>
+          <h3>Travelpayouts (in voorbereiding)</h3>
+          <p>
+            Travelpayouts is een aggregator. We activeren stuk voor stuk de relevante programma's:
+            Aviasales/Skyscanner (vluchten), KiwiTaxi (airport transfers), EconomyBookings (autohuur).
+            Zodra die live staan worden ze hier per programma vermeld.
+          </p>
+          <h3>Nog aan te vragen</h3>
           <ul>
             <li>Hostelworld (hostels per stad)</li>
             <li>Booking.com (accommodatie)</li>
             <li>DiscoverCars (autohuur)</li>
             <li>JoHo Insurances (NL-talige reisverzekering)</li>
           </ul>
-          <p>Zodra deze live staan voegen we ze toe aan deze lijst, met datum.</p>
         </div>
       </section>
     </>
