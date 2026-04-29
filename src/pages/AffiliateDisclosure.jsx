@@ -79,18 +79,34 @@ export default function AffiliateDisclosure() {
             <li>Cookie: 24 uur (90 dagen bij in-winkelwagen)</li>
             <li>Te zien op: voor-vertrek-pagina (packing list, in opbouw)</li>
           </ul>
-          <h3>Travelpayouts (in voorbereiding)</h3>
-          <p>
-            Travelpayouts is een aggregator. We activeren stuk voor stuk de relevante programma's:
-            Aviasales/Skyscanner (vluchten), KiwiTaxi (airport transfers), EconomyBookings (autohuur).
-            Zodra die live staan worden ze hier per programma vermeld.
-          </p>
+          <h3>KiwiTaxi (sinds 29 april 2026)</h3>
+          <ul>
+            <li>Programma: Travelpayouts &middot; KiwiTaxi</li>
+            <li>Commissie: ~50% van KiwiTaxi-commissie</li>
+            <li>Cookie: 30 dagen</li>
+            <li>Te zien op: eerste-week-pagina (airport transfer, in opbouw)</li>
+          </ul>
+          <h3>Saily eSIM (sinds 29 april 2026)</h3>
+          <ul>
+            <li>Programma: Travelpayouts &middot; Saily</li>
+            <li>Commissie: per kwalificerende eSIM-aankoop</li>
+            <li>Cookie: 30 dagen</li>
+            <li>Te zien op: eSIM-vergelijking (in opbouw)</li>
+          </ul>
+          <h3>Airalo eSIM (sinds 29 april 2026)</h3>
+          <ul>
+            <li>Programma: Travelpayouts &middot; Airalo</li>
+            <li>Commissie: per kwalificerende eSIM-aankoop</li>
+            <li>Cookie: 30 dagen</li>
+            <li>Te zien op: eSIM-vergelijking (in opbouw)</li>
+          </ul>
           <h3>Nog aan te vragen</h3>
           <ul>
             <li>Hostelworld (hostels per stad)</li>
             <li>Booking.com (accommodatie)</li>
             <li>DiscoverCars (autohuur)</li>
             <li>JoHo Insurances (NL-talige reisverzekering)</li>
+            <li>Travelpayouts: Aviasales/Skyscanner (vluchten), EconomyBookings (autohuur)</li>
           </ul>
         </div>
       </section>

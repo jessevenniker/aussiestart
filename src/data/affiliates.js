@@ -53,6 +53,30 @@ export const affiliates = {
     cookie: '24 uur (90 dagen bij toegevoegd-aan-winkelwagen)',
     confirmedSince: '29 april 2026',
   },
+  kiwitaxi: {
+    name: 'KiwiTaxi',
+    url: 'https://kiwitaxi.tpm.lv/1fKPLuVZ',
+    program: 'Travelpayouts · KiwiTaxi',
+    commission: '~50% van KiwiTaxi-commissie',
+    cookie: '30 dagen',
+    confirmedSince: '29 april 2026',
+  },
+  saily: {
+    name: 'Saily eSIM',
+    url: 'https://saily.tpm.lv/dO2keDFu',
+    program: 'Travelpayouts · Saily',
+    commission: 'Per kwalificerende eSIM-aankoop',
+    cookie: '30 dagen',
+    confirmedSince: '29 april 2026',
+  },
+  airalo: {
+    name: 'Airalo eSIM',
+    url: 'https://airalo.tpm.lv/psUikrNb',
+    program: 'Travelpayouts · Airalo',
+    commission: 'Per kwalificerende eSIM-aankoop',
+    cookie: '30 dagen',
+    confirmedSince: '29 april 2026',
+  },
 }
 
 /**
