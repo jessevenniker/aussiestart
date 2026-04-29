@@ -24,10 +24,10 @@ const tasks = [
     path: '/banking',
   },
   {
-    title: 'SIM-kaart kopen',
-    blurb: 'Optus, Telstra, Vodafone of een MVNO. Prepaid is voor backpackers vaak goedkoper.',
-    when: 'Dag 1',
-    path: null,
+    title: 'eSIM activeren',
+    blurb: 'Telsim, Airalo of Saily. Voor je vlucht activeren, vanaf landing internet. Telsim ~€13 voor 80 GB op Telstra-netwerk.',
+    when: 'Voor vertrek',
+    path: '/esim',
   },
   {
     title: 'OPAL/Myki/Go Card kopen',

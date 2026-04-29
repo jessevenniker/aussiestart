@@ -27,6 +27,7 @@ const routes = [
   { path: '/banking',              changefreq: 'monthly', priority: 0.8 },
   { path: '/werk',                 changefreq: 'monthly', priority: 0.8 },
   { path: '/hostels',              changefreq: 'monthly', priority: 0.8 },
+  { path: '/esim',                 changefreq: 'monthly', priority: 0.7 },
   { path: '/verzekering',          changefreq: 'monthly', priority: 0.9 },
   { path: '/medicare',             changefreq: 'monthly', priority: 0.8 },
   { path: '/eerste-week',          changefreq: 'monthly', priority: 0.8 },

@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
@@ -18,6 +18,7 @@ const TaxFileNumber       = lazy(() => import('./pages/TaxFileNumber.jsx'))
 const Banking             = lazy(() => import('./pages/Banking.jsx'))
 const Loon                = lazy(() => import('./pages/Loon.jsx'))
 const Hostels             = lazy(() => import('./pages/Hostels.jsx'))
+const Esim                = lazy(() => import('./pages/Esim.jsx'))
 const Verhalen            = lazy(() => import('./pages/Verhalen.jsx'))
 const Over                = lazy(() => import('./pages/Over.jsx'))
 const AffiliateDisclosure = lazy(() => import('./pages/AffiliateDisclosure.jsx'))
@@ -38,6 +39,13 @@ function PageLoader() {
 }
 
 export default function App() {
+  // Deterministisch signal voor prerender-script: puppeteer wacht tot dit
+  // attribuut op <html> staat voordat het de HTML exporteert. Mount-tijd
+  // garandeert dat react-helmet-async's head-mutaties klaar zijn.
+  useEffect(() => {
+    document.documentElement.setAttribute('data-prerender-ready', '1')
+  }, [])
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -59,6 +67,7 @@ export default function App() {
             <Route path="/banking"               element={<Banking />} />
             <Route path="/loon"                  element={<Loon />} />
             <Route path="/hostels"               element={<Hostels />} />
+            <Route path="/esim"                  element={<Esim />} />
             <Route path="/verhalen"              element={<Verhalen />} />
             <Route path="/over"                  element={<Over />} />
             <Route path="/affiliate-disclosure"  element={<AffiliateDisclosure />} />
