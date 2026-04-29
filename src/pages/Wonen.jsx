@@ -5,7 +5,10 @@ import Placeholder from '../components/Placeholder.jsx'
 export default function Wonen() {
   return (
     <>
-      <Helmet><title>Wonen in Australië, hostel, sharehouse of camper</title></Helmet>
+      <Helmet>
+        <title>Wonen in Australië · Aussiestart</title>
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
       <PageHeader
         eyebrow="Wonen"
         title="Hostel, sharehouse of camper: wat past bij welke fase"

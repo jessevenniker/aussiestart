@@ -16,26 +16,25 @@ const SITE = process.env.SITE_URL
         : null)
   || 'https://aussiestart.vercel.app'
 
+// Pagina's met echte content. Placeholders (BeginHier, VoorVertrek, Wonen,
+// Verhalen) staan op noindex en horen niet in de sitemap totdat ze inhoud
+// hebben.
 const routes = [
-  { path: '/',                   changefreq: 'weekly',  priority: 1.0 },
-  { path: '/begin-hier',         changefreq: 'monthly', priority: 0.8 },
-  { path: '/visum',              changefreq: 'monthly', priority: 0.9 },
-  { path: '/voor-vertrek',       changefreq: 'monthly', priority: 0.7 },
-  { path: '/kosten',             changefreq: 'monthly', priority: 0.9 },
-  { path: '/loon',               changefreq: 'monthly', priority: 0.8 },
-  { path: '/banking',            changefreq: 'monthly', priority: 0.8 },
-  { path: '/werk',               changefreq: 'monthly', priority: 0.8 },
-  { path: '/wonen',              changefreq: 'monthly', priority: 0.6 },
-  { path: '/hostels',            changefreq: 'monthly', priority: 0.8 },
-  { path: '/verzekering',        changefreq: 'monthly', priority: 0.9 },
-  { path: '/medicare',           changefreq: 'monthly', priority: 0.8 },
-  { path: '/eerste-week',        changefreq: 'monthly', priority: 0.8 },
-  { path: '/tax-file-number',    changefreq: 'monthly', priority: 0.8 },
-  { path: '/verhalen',           changefreq: 'monthly', priority: 0.5 },
-  { path: '/bronnen',            changefreq: 'monthly', priority: 0.4 },
-  { path: '/over',               changefreq: 'yearly',  priority: 0.3 },
+  { path: '/',                     changefreq: 'weekly',  priority: 1.0 },
+  { path: '/visum',                changefreq: 'monthly', priority: 0.9 },
+  { path: '/kosten',               changefreq: 'monthly', priority: 0.9 },
+  { path: '/loon',                 changefreq: 'monthly', priority: 0.8 },
+  { path: '/banking',              changefreq: 'monthly', priority: 0.8 },
+  { path: '/werk',                 changefreq: 'monthly', priority: 0.8 },
+  { path: '/hostels',              changefreq: 'monthly', priority: 0.8 },
+  { path: '/verzekering',          changefreq: 'monthly', priority: 0.9 },
+  { path: '/medicare',             changefreq: 'monthly', priority: 0.8 },
+  { path: '/eerste-week',          changefreq: 'monthly', priority: 0.8 },
+  { path: '/tax-file-number',      changefreq: 'monthly', priority: 0.8 },
+  { path: '/bronnen',              changefreq: 'monthly', priority: 0.4 },
+  { path: '/over',                 changefreq: 'yearly',  priority: 0.3 },
   { path: '/affiliate-disclosure', changefreq: 'monthly', priority: 0.4 },
-  { path: '/contact',            changefreq: 'yearly',  priority: 0.3 },
+  { path: '/contact',              changefreq: 'yearly',  priority: 0.3 },
 ]
 
 const today = new Date().toISOString().slice(0, 10)
