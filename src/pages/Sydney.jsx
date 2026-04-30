@@ -2,8 +2,15 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { ArticleLayout, Callout, FactsTable, FAQ } from '../components/Article.jsx'
-import AffiliateLink from '../components/AffiliateLink.jsx'
 import { viatorUrl, getyourguideUrl } from '../data/affiliates.js'
+
+function ExtIcon() {
+  return (
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <path d="M3 9L9 3M9 3H4M9 3V8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
 
 const wijken = [
   {
@@ -53,25 +60,37 @@ const wijken = [
 const tours = [
   {
     naam: 'BridgeClimb Sydney',
-    blurb: 'Beklim de Harbour Bridge. Dag, schemer of nacht, 3,5 uur. AUD 174-388 afhankelijk van tijdstip.',
+    label: 'Iconisch',
+    prijs: 'AUD 174-388',
+    duur: '3,5 uur',
+    blurb: 'Beklim de Harbour Bridge. Je kiest zelf dag, schemer of nacht. Gids meegerekend, veiligheidsgear ook. Nachtklim is spectaculairder, dagklim goedkoper.',
     viatorPath: '/tours/Sydney/Sydney-BridgeClimb/d357-2015T42540/',
     gygPath: '/s/Sydney--Australia/ct/tours/?q=bridge+climb',
   },
   {
-    naam: 'Sydney Opera House rondleiding',
-    blurb: '1 uur backstage tour door het iconische gebouw. AUD 40-65 per persoon, ook beschikbaar in het Nederlands (audioguide).',
+    naam: 'Opera House tour',
+    label: 'Cultureel',
+    prijs: 'AUD 40-65',
+    duur: '1 uur',
+    blurb: 'Backstage rondleiding door het Opera House. Audioguide beschikbaar in meerdere talen. Goed te combineren met lunch bij Circular Quay.',
     viatorPath: '/tours/Sydney/Sydney-Opera-House-Tours/d357-7088P19/',
     gygPath: '/s/Sydney--Australia/ct/tours/?q=opera+house',
   },
   {
     naam: 'Blue Mountains dagtrip',
-    blurb: 'Three Sisters, Scenic World, Leura. Combineer met optionele grot-tour of bushwalk. AUD 80-160 inclusief bus/trein.',
+    label: 'Natuur',
+    prijs: 'AUD 80-160',
+    duur: 'Hele dag',
+    blurb: 'Three Sisters, Scenic World en het Jamison Valley. Vervoer vanuit Sydney inbegrepen. Combineerbaar met Featherdale Wildlife Park voor extra AUD 30-40.',
     viatorPath: '/tours/Sydney/Blue-Mountains-Day-Trip-from-Sydney/d357-15990P3/',
     gygPath: '/s/Sydney--Australia/ct/tours/?q=blue+mountains+day+trip',
   },
   {
-    naam: 'Jervis Bay + Dolphin Cruise',
-    blurb: 'Dagtrip zuidwaarts, witste zand van Australie (officieel), dolfijnen kijken in de baai. AUD 120-170.',
+    naam: 'Jervis Bay dagtrip',
+    label: 'Strand',
+    prijs: 'AUD 120-170',
+    duur: 'Hele dag',
+    blurb: 'Witste zand van Australie (officieel gemeten). Dolfijnen kijken in de baai is bijna gegarandeerd. 2,5 uur rijden vanaf Sydney, lekker in een kleine groep.',
     viatorPath: '/tours/Sydney/Jervis-Bay-Day-Trip-from-Sydney/d357-5490JBWSS/',
     gygPath: '/s/Sydney--Australia/ct/tours/?q=jervis+bay',
   },
@@ -209,22 +228,43 @@ export default function Sydney() {
           Sydney heeft twee eigen affiliatepartners: Viator en GetYourGuide. Beide bieden dezelfde tours aan,
           prijzen zijn vergelijkbaar. Hieronder vier concrete opties met links naar beide platforms.
         </p>
-        <div className="not-prose my-6 space-y-4">
+        <div className="not-prose my-6 grid sm:grid-cols-2 gap-4">
           {tours.map((t) => (
-            <div key={t.naam} className="border border-sand rounded-xl p-5 bg-bone">
-              <h3 className="font-serif text-xl text-forest mb-1">{t.naam}</h3>
-              <p className="text-sm text-ink/80 mb-4">{t.blurb}</p>
-              <div className="flex flex-wrap gap-3">
-                <AffiliateLink partner="viator" href={viatorUrl(t.viatorPath)} variant="button">
-                  Bekijk op Viator
-                </AffiliateLink>
-                <AffiliateLink partner="getyourguide" href={getyourguideUrl(t.gygPath)} variant="button">
-                  Bekijk op GetYourGuide
-                </AffiliateLink>
+            <div key={t.naam} className="border border-sand rounded-2xl overflow-hidden bg-bone flex flex-col">
+              <div className="p-5 flex-1">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-wider text-slate bg-sand px-2 py-0.5 rounded-full">{t.label}</span>
+                  <span className="text-xs text-slate">{t.duur}</span>
+                </div>
+                <h3 className="font-serif text-xl text-forest mb-1">{t.naam}</h3>
+                <p className="text-sm text-ink/75 leading-relaxed mb-3">{t.blurb}</p>
+                <p className="text-xs text-slate font-medium">Vanaf {t.prijs} p.p.</p>
+              </div>
+              <div className="px-5 pb-5 flex flex-wrap gap-3 items-center">
+                <a
+                  href={viatorUrl(t.viatorPath)}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="btn-primary text-sm"
+                >
+                  Boek via Viator
+                  <ExtIcon />
+                </a>
+                <a
+                  href={getyourguideUrl(t.gygPath)}
+                  target="_blank"
+                  rel="sponsored noopener noreferrer"
+                  className="text-sm text-ember underline underline-offset-2 hover:text-sunset"
+                >
+                  of GetYourGuide
+                </a>
               </div>
             </div>
           ))}
         </div>
+        <p className="text-xs text-slate not-prose">
+          Beschikbaarheid en prijzen via boekingsplatforms. Aussiestart ontvangt een kleine commissie bij boeking, voor jou is de prijs hetzelfde.
+        </p>
 
         <h2>Kosten inschatten</h2>
         <p>

@@ -35,7 +35,7 @@
   .prose-custom h3 { @apply text-xl mt-8 mb-2 text-forest; }
   .prose-custom a { @apply text-ember underline underline-offset-2 hover:text-sunset; }
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-ember text-bone px-5 py-3 rounded-full font-medium hover:bg-sunset transition-colors;
+    @apply inline-flex items-center gap-2 bg-ember !text-bone px-5 py-3 rounded-full font-medium hover:bg-sunset transition-colors !no-underline;
   }
   .btn-secondary {
     @apply inline-flex items-center gap-2 border border-forest/30 text-forest px-5 py-3 rounded-full font-medium hover:bg-forest hover:text-bone transition-colors;
