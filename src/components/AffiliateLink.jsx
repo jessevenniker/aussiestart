@@ -12,15 +12,17 @@
  */
 import { affiliates } from '../data/affiliates.js'
 
-export default function AffiliateLink({ partner, variant = 'inline', className = '', children }) {
+export default function AffiliateLink({ partner, href, variant = 'inline', className = '', children }) {
   const a = affiliates[partner]
   if (!a) return <span className="text-ember">[onbekende partner: {partner}]</span>
+
+  const url = href || a.url
 
   if (variant === 'button') {
     return (
       <span className="inline-flex flex-col items-start gap-1">
         <a
-          href={a.url}
+          href={url}
           target="_blank"
           rel="sponsored noopener noreferrer"
           className={`btn-primary ${className}`}
@@ -36,7 +38,7 @@ export default function AffiliateLink({ partner, variant = 'inline', className =
   return (
     <span className="inline-flex items-baseline gap-1.5">
       <a
-        href={a.url}
+        href={url}
         target="_blank"
         rel="sponsored noopener noreferrer"
         className={`text-ember underline underline-offset-2 hover:text-sunset ${className}`}

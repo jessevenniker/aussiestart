@@ -30,6 +30,7 @@ const routes = [
   { path: '/medicare',             changefreq: 'monthly', priority: 0.8 },
   { path: '/eerste-week',          changefreq: 'monthly', priority: 0.8 },
   { path: '/tax-file-number',      changefreq: 'monthly', priority: 0.8 },
+  { path: '/sydney',               changefreq: 'monthly', priority: 0.8 },
   { path: '/bronnen',              changefreq: 'monthly', priority: 0.4 },
   { path: '/over',                 changefreq: 'yearly',  priority: 0.3 },
   { path: '/affiliate-disclosure', changefreq: 'monthly', priority: 0.4 },

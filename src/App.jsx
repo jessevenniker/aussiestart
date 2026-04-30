@@ -22,6 +22,7 @@ const Banking             = lazy(() => import('./pages/Banking.jsx'))
 const Loon                = lazy(() => import('./pages/Loon.jsx'))
 const Hostels             = lazy(() => import('./pages/Hostels.jsx'))
 const Esim                = lazy(() => import('./pages/Esim.jsx'))
+const Sydney              = lazy(() => import('./pages/Sydney.jsx'))
 const Verhalen            = lazy(() => import('./pages/Verhalen.jsx'))
 const Over                = lazy(() => import('./pages/Over.jsx'))
 const AffiliateDisclosure = lazy(() => import('./pages/AffiliateDisclosure.jsx'))
@@ -78,6 +79,7 @@ export default function App() {
             <Route path="/loon"                  element={<Loon />} />
             <Route path="/hostels"               element={<Hostels />} />
             <Route path="/esim"                  element={<Esim />} />
+            <Route path="/sydney"                element={<Sydney />} />
             <Route path="/verhalen"              element={<Verhalen />} />
             <Route path="/over"                  element={<Over />} />
             <Route path="/affiliate-disclosure"  element={<AffiliateDisclosure />} />
