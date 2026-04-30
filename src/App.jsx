@@ -1,9 +1,12 @@
 import { lazy, Suspense, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import Home from './pages/Home.jsx'
+
+const SITE_URL = 'https://australiestart.nl'
 
 const BeginHier           = lazy(() => import('./pages/BeginHier.jsx'))
 const Visum               = lazy(() => import('./pages/Visum.jsx'))
@@ -46,8 +49,15 @@ export default function App() {
     document.documentElement.setAttribute('data-prerender-ready', '1')
   }, [])
 
+  const location = useLocation()
+  const canonical = `${SITE_URL}${location.pathname}`
+
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <link rel="canonical" href={canonical} />
+        <meta property="og:url" content={canonical} />
+      </Helmet>
       <Header />
       <ScrollToTop />
       <main className="flex-1">

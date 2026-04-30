@@ -8,13 +8,9 @@ import { dirname, resolve } from 'node:path'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-// Domein wordt op build-tijd bepaald via env var, met fallback.
-// Op Vercel staat VERCEL_URL beschikbaar; voor productie zet je SITE_URL in env.
-const SITE = process.env.SITE_URL
-  || (process.env.VERCEL_ENV === 'production' && process.env.VERCEL_PROJECT_PRODUCTION_URL
-        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-        : null)
-  || 'https://aussiestart.vercel.app'
+// Canonical productie-domein. SITE_URL env-var kan dit overschrijven voor
+// preview-deploys, anders is australiestart.nl het canonieke domein.
+const SITE = process.env.SITE_URL || 'https://australiestart.nl'
 
 // Pagina's met echte content. Placeholder (Verhalen) staat op noindex en
 // hoort niet in de sitemap totdat hij inhoud heeft.
