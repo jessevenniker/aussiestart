@@ -1,170 +1,364 @@
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
-import { Callout, FAQ, ArticleLayout } from '../components/Article.jsx'
+import { FAQ, ArticleLayout, SourceStrip, MarginNote, LastChecked } from '../components/Article.jsx'
 import CostCalculator from '../components/CostCalculator.jsx'
+import EmailCapture from '../components/EmailCapture.jsx'
+import { SOT, gechecktOp } from '../data/sot.js'
+
+const SCENARIOS = [
+  {
+    label: 'Zuinig starten',
+    voor: 'Je wilt snel werk zoeken, eet eenvoudig en woont in een sharehouse',
+    maand: 'AUD 1.800–2.200',
+    start: '€4.500–5.500',
+  },
+  {
+    label: 'Realistisch (Sydney/Melbourne)',
+    voor: 'Gemiddeld hostel of sharehouse, eet uit, af en toe iets ondernemen',
+    maand: 'AUD 2.500–3.200',
+    start: '€6.000–8.000',
+  },
+  {
+    label: 'Eerst reizen, dan werken',
+    voor: 'Je reserveert de eerste 4–6 weken voor reizen vóór je werk zoekt',
+    maand: 'AUD 3.000–4.000 (reismaanden)',
+    start: '€8.000–10.000',
+  },
+  {
+    label: 'Farmwork-route',
+    voor: 'Je gaat direct regionaal werken — accommodatie soms inclusief, lagere woonkosten',
+    maand: 'AUD 1.500–2.500',
+    start: '€4.000–6.000',
+  },
+]
+
+const FOUTEN = [
+  {
+    n: '1',
+    titel: 'Eerste maand onderschatten',
+    tekst: 'Borg, eerste boodschappen, OPAL-pas, eSIM, eerste verzekeringspremie — reken op AUD 1.500–2.500 extra in je eerste maand boven je normale maandbudget.',
+  },
+  {
+    n: '2',
+    titel: 'Geen buffer voor werk-zoektijd',
+    tekst: 'De meeste backpackers vinden binnen 2–3 weken werk, maar niet iedereen. Reken op minimaal 4–6 weken uitgaven voordat je eerste payslip binnenkomt.',
+  },
+  {
+    n: '3',
+    titel: 'Vluchten te optimistisch boeken',
+    tekst: 'Een open jaar-ticket is duurder dan twee enkelreizen. Een retour met flexibele datum is meestal het goedkoopst. Reken op €1.000–1.500, niet €700.',
+  },
+  {
+    n: '4',
+    titel: 'Reizen binnenshuis vergeten',
+    tekst: 'Australië is groot en mooi. Vrijwel iedereen wil ook reizen, niet alleen werken. Reserveer een buffer voor weekendtrips en de roadtrip aan het einde.',
+  },
+  {
+    n: '5',
+    titel: 'Wisselkoers als vast gegeven behandelen',
+    tekst: 'De AUD/EUR-koers schommelt tussen 0,55 en 0,68. Reken op het midden, niet op de huidige stand.',
+  },
+]
 
 export default function Kosten() {
+  const loon = SOT.minimumloon
+  const acc  = SOT.accommodatie
+  const ew   = SOT.eersteWeek
+
   return (
     <>
       <Helmet>
-        <title>Wat kost een working holiday Australië echt? · Aussiestart</title>
-        <meta name="description" content="Geen €5.000 zoals KILROY zegt. Met sliders zie je wat een working holiday in Australië echt kost: per maand, per jaar, eenmalig vóór vertrek." />
+        <title>Wat kost een Working Holiday Australië écht? | Aussiestart</title>
+        <meta name="description" content="Geen €5.000 zoals bureaus zeggen. Met sliders zie je wat een Working Holiday in Australië realistisch kost: per maand, per jaar, eenmalig vóór vertrek." />
       </Helmet>
       <PageHeader
-        eyebrow="Geld"
-        title="Wat kost een working holiday Australië écht?"
-        intro="Niet €5.000 zoals KILROY zegt. Met sliders zie je wat een eerlijke begroting per maand én totaal is, gebaseerd op cijfers van mensen die er nu zijn."
-        lastChecked="29 april 2026"
-        source="Eigen uitgaven + Reddit r/australia + Flatmates.com.au"
+        eyebrow="Tool · Kosten"
+        title="Wat kost een Working Holiday Australië écht?"
+        intro="Niet de €5.000 die bemiddelaars zeggen. Hieronder bereken je een eerlijk startbudget per maand én totaal — met scenario's en wat mensen structureel onderschatten."
+        lastChecked={gechecktOp(loon.lastChecked)}
+        source={loon.bron}
       />
 
-      <ArticleLayout aside={<KostenAside />}>
+      <ArticleLayout aside={<KostenSidebar />}>
+
         <p>
-          Bemiddelaars zeggen graag dat je AUD 5.000 spaargeld nodig hebt en dat het hen €1.500 tot €2.000 kost
-          om "alles" voor je te regelen. Dat klopt niet helemaal. AUD 5.000 spaargeld is een visum-eis (je moet
-          het kúnnen tonen, niet uitgeven), en het meeste van wat een bemiddelaar regelt kun je zelf doen. Wat
-          het wél echt kost staat hieronder, en je kunt het zelf doorrekenen.
+          Bemiddelaars noemen AUD 5.000 als richtlijn. Dat is de officiële visum-eis — je moet aantonen
+          dat je het hebt, niet dat je het uitgeeft. Wat het echt kost om een jaar in Australië te leven
+          en werken, staat hieronder. Je kunt het zelf doorrekenen.
         </p>
 
+        <SourceStrip
+          source={loon.bron}
+          url={loon.bronUrl}
+          checked={gechecktOp(loon.lastChecked)}
+          type="officieel minimumloon + marktprijzen accommodatie"
+        />
+
+        {/* ── De calculator ─────────────────────────────────────────── */}
         <h2>De calculator</h2>
         <p>
-          Sleep de sliders naar jouw situatie. De getallen zijn realistische ranges, geen worst-case en geen
-          backpacker-influencer-droombudget.
+          Sleep de sliders naar jouw situatie. De getallen zijn realistische ranges — geen worst-case
+          en geen backpacker-influencer-droombudget.
         </p>
-
         <CostCalculator />
 
-        <h2>Wat de cijfers betekenen</h2>
-        <p>
-          Een doorsnee Working Holiday Maker geeft tussen de AUD 2.000 en AUD 3.000 per maand uit, afhankelijk
-          van stad, woonsituatie en levensstijl. Dat komt neer op €1.200 tot €1.800 per maand. Voor 12 maanden
-          inclusief eenmalige kosten zit je realistisch tussen de €18.000 en €25.000.
-        </p>
-        <p>
-          Klinkt veel? Het is precies dezelfde grootteorde als een jaar studeren in Nederland: collegegeld
-          (€2.500), kamerhuur (€500-700/maand), eten en uitgaan (€300-400/maand). Het verschil: in Australië
-          verdien je het grootste deel zelf terug door werk.
-        </p>
+        {/* ── Scenario's ────────────────────────────────────────────── */}
+        <h2>Vier scenario's</h2>
+        <p>Afhankelijk van hoe je begint, verschilt het startbedrag flink.</p>
 
+        <div className="not-prose my-6 overflow-hidden border border-sand rounded-lg">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="bg-forest/5 border-b border-sand">
+                <th className="py-2.5 px-4 text-left font-semibold text-ink">Scenario</th>
+                <th className="py-2.5 px-4 text-left font-semibold text-ink">Per maand</th>
+                <th className="py-2.5 px-4 text-left font-semibold text-ink">Startbudget</th>
+              </tr>
+            </thead>
+            <tbody>
+              {SCENARIOS.map((s, i) => (
+                <tr key={s.label} className={i % 2 === 0 ? 'bg-bone' : 'bg-cream'}>
+                  <td className="py-3 px-4 align-top">
+                    <span className="font-medium text-forest block">{s.label}</span>
+                    <span className="text-xs text-slate mt-0.5 block">{s.voor}</span>
+                  </td>
+                  <td className="py-3 px-4 align-top text-ink font-medium">{s.maand}</td>
+                  <td className="py-3 px-4 align-top text-ink">{s.start}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <MarginNote type="warn">
+          <strong>Eerste week:</strong> gemiddeld {ew.totaalRange} extra boven je normale maandbudget.
+          Denk aan borg, eSIM, OPAL/Myki-pas, eerste boodschappen en de hostel-buffer voor werken zoeken.
+        </MarginNote>
+
+        {/* ── Hoeveel verdien je terug ──────────────────────────────── */}
         <h2>Hoeveel verdien je terug?</h2>
         <p>
-          Het Australische minimumloon is sinds 1 juli 2025 AUD 24,95/uur. Voor backpackers met een casual
-          contract (de norm in hospitality, hostels, retail en farmwork) komt daar 25% casual loading bovenop:
-          <strong> AUD 31,19/uur</strong>. Bij 38 uur per week:
+          Het Australische minimumloon is <strong>{loon.uurloon}/uur</strong> (per {loon.geldigVanaf}).
+          Voor backpackers met een casual contract — de norm in hospitality, retail en farmwork — komt
+          daar 25% casual loading bovenop: <strong>{loon.casualLoon}/uur</strong>.
         </p>
-        <ul>
-          <li>Bruto per week: AUD 1.185</li>
-          <li>Belasting (15% WHM-tarief): AUD 178</li>
-          <li>Netto per week: <strong>AUD 1.007</strong></li>
-          <li>Netto per maand: <strong>AUD 4.365</strong> (≈ €2.660 bij koers 0,61)</li>
-        </ul>
         <p>
-          Bij gemiddelde uitgaven (AUD 2.500–3.500/maand) hou je dus AUD 800–1.800 per maand over. Op weekenden
-          en feestdagen liggen tarieven nog hoger, tot 2,5× het basistarief. Volledige uitleg op de{' '}
-          <Link to="/loon">loon-en-belasting-pagina</Link>.
+          Bij 38 uur per week: bruto AUD {Math.round(parseFloat(loon.casualLoon.replace('AUD ','').replace(',','.')) * 38).toLocaleString('nl-NL')}/week.
+          Belasting als Working Holiday Maker: 15% over de eerste AUD 45.000.
+          Netto per maand: <strong>≈ AUD 4.200–4.500</strong> bij voltijd werk.
         </p>
-        <Callout kind="info" title="Realistisch scenario">
-          Iemand die na 2 maanden werk vindt en dan 8 maanden voltijd werkt, komt aan het eind van een jaar uit
-          op een neutraal saldo of een paar duizend euro netto winst, plus 12 maanden Australië in zijn boekje.
-        </Callout>
-
-        <h2>Vergelijk met een bemiddelaar-pakket</h2>
         <p>
-          Een werkvisum-pakket bij Travel Active of KILROY kost €1.500 tot €2.050. Wat zit erin?
-        </p>
-        <ul>
-          <li>Je visumaanvraag begeleid (kost AUD 670, kun je zelf in 30 minuten)</li>
-          <li>Verzekering (€200-500 die je sowieso betaalt)</li>
-          <li>Vlucht (€700-1.300 die je sowieso betaalt)</li>
-          <li>Eerste paar nachten hostel (€80-150 die je sowieso betaalt)</li>
-          <li>Soms een "garantie-werkplek" in farmwork (vaak van slechte kwaliteit)</li>
-          <li>Een appje en wat voor-vertrek-info (waar je deze website ook voor hebt)</li>
-        </ul>
-        <p>
-          Het verschil tussen pakket-prijs en wat je sowieso uitgeeft, ongeveer €600 tot €1.000, is in feite het
-          tarief voor "iemand anders die het regelt". Voor sommige mensen waardevol, voor de meeste niet.
+          Superannuation ({loon.superRate}) wordt bovenop je uurloon gestort en krijg je terug bij vertrek
+          als je het claimt via de ATO. Meer uitleg op de{' '}
+          <Link to="/loon" className="text-ember underline underline-offset-2">loon- en belastingpagina</Link>.
         </p>
 
+        <MarginNote type="tip">
+          Bij gemiddelde uitgaven (AUD 2.500–3.000/maand) hou je voltijd werkend AUD 1.200–1.800 per maand
+          over. Op weekenden en feestdagen gelden hogere tarieven — tot 2,5× het basistarief.
+        </MarginNote>
+
+        {/* ── Vergelijking met bemiddelaar ──────────────────────────── */}
+        <h2>Wat kost een bemiddelaar-pakket extra?</h2>
+        <p>
+          Pakketten van bureaus zoals Travel Active of KILROY kosten €549 tot €2.050. Wat zit erin?
+        </p>
+
+        <div className="not-prose my-5 divide-y divide-sand border-t border-b border-sand">
+          {[
+            ['Visumaanvraag', 'AUD 670 sowieso', 'Bureau doet het voor je in 30 min — jij kunt dat ook zelf'],
+            ['Verzekering', '€200–500 sowieso', 'Zelfde polissen, dezelfde prijs'],
+            ['Vlucht', '€700–1.300 sowieso', 'Bureau boekt op jouw naam, dezelfde tarieven'],
+            ['Eerste hostel', '€80–150 sowieso', 'Jij kunt ook Hostelworld gebruiken'],
+            ['Werkgarantie farmwork', 'Optioneel', 'Soms van wisselende kwaliteit, controleer altijd de werkgever'],
+          ].map(([item, kosten, noot]) => (
+            <div key={item} className="py-3 flex flex-col sm:flex-row gap-1 sm:gap-6 text-sm">
+              <span className="font-medium text-ink w-40 shrink-0">{item}</span>
+              <span className="text-slate w-36 shrink-0">{kosten}</span>
+              <span className="text-ink/70">{noot}</span>
+            </div>
+          ))}
+        </div>
+
+        <MarginNote type="note">
+          Het verschil tussen pakketprijs en wat je sowieso uitgeeft is €500–€1.000. Dat is het tarief
+          voor "iemand anders die het regelt". Voor sommige mensen waardevol. Voor de meeste: niet nodig
+          als je een goede voorbereiding hebt.
+        </MarginNote>
+
+        {/* ── Budget-fouten ─────────────────────────────────────────── */}
         <h2>Vijf budget-fouten die mensen maken</h2>
-        <Callout kind="warn" title="1. De eerste maand onderschatten">
-          Borg, eerste boodschappen, OPAL-pas, SIM-kaart, eerste verzekeringspremie, eventuele tandartsbezoek,
-          fix iets dat je vergat. Reken op AUD 1.500 tot AUD 2.500 extra in je eerste maand.
-        </Callout>
-        <Callout kind="warn" title="2. Geen buffer voor werk-zoektijd">
-          De meeste backpackers vinden binnen 2-3 weken werk, maar niet iedereen. Reken op minimaal 4-6 weken
-          uitgaven voordat je eerste payslip binnenkomt, ruim AUD 2.000-3.000 buffer dus.
-        </Callout>
-        <Callout kind="warn" title="3. Vluchten niet realistisch boeken">
-          Een open jaar-ticket is duurder dan twee enkelreizen. Een retour met flexible-datums is meestal het
-          goedkoopst. Reken op €1.000-1.500, niet €700.
-        </Callout>
-        <Callout kind="warn" title="4. Onderschatten van uitgaan en travel">
-          Australië is groot en mooi. Vrijwel iedereen wil ook reizen, niet alleen werken. Reken een buffer voor
-          weekendtrips, evenementen, en die ene roadtrip aan het einde.
-        </Callout>
-        <Callout kind="warn" title="5. Ervan uitgaan dat de wisselkoers gunstig blijft">
-          De AUD/EUR-koers schommelt tussen 0,55 en 0,68. Reken liever op het midden, niet op de huidige stand.
-        </Callout>
+        <div className="not-prose my-5 space-y-4">
+          {FOUTEN.map((f) => (
+            <div key={f.n} className="flex gap-4 border-b border-sand pb-4 last:border-b-0">
+              <span className="shrink-0 w-7 h-7 rounded-full bg-ember/10 text-ember text-xs font-semibold flex items-center justify-center">
+                {f.n}
+              </span>
+              <div>
+                <p className="font-medium text-forest text-sm mb-1">{f.titel}</p>
+                <p className="text-ink/80 text-sm leading-relaxed">{f.tekst}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
+        {/* ── Accommodatie-prijzen ──────────────────────────────────── */}
+        <h2>Wat kost wonen?</h2>
+        <p>De grootste variabele in je budget is wonen. Prijsranges:</p>
+        <div className="not-prose my-5 overflow-hidden border border-sand rounded-lg">
+          <table className="w-full text-sm">
+            <tbody>
+              <tr className="bg-bone">
+                <td className="py-2.5 px-4 text-slate">Hostel dormitory per nacht</td>
+                <td className="py-2.5 px-4 font-medium text-ink">{acc.hostelDormNacht}</td>
+              </tr>
+              <tr className="bg-cream">
+                <td className="py-2.5 px-4 text-slate">Hostel dormitory per week</td>
+                <td className="py-2.5 px-4 font-medium text-ink">{acc.hostelDormWeek}</td>
+              </tr>
+              <tr className="bg-bone">
+                <td className="py-2.5 px-4 text-slate">Sharehouse per week</td>
+                <td className="py-2.5 px-4 font-medium text-ink">{acc.sharehouseWeek}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-slate">
+          Meer over wonen, inspectie, borg en scams: <Link to="/wonen" className="text-ember underline underline-offset-2">de woongids →</Link>
+        </p>
+
+        {/* ── FAQ ───────────────────────────────────────────────────── */}
         <h2>Veelgestelde vragen</h2>
         <FAQ q="Klopt de AUD 5.000 spaargeld-eis?">
-          Ja, dat is een officiële visum-eis. Maar je hoeft het niet uit te geven. Je moet kunnen aantonen dat je
-          het hebt op het moment van aanvragen, bijvoorbeeld via een bankafschrift. Dezelfde AUD 5.000 mag je
-          gewoon meenemen en gebruiken.
+          Ja, dat is een officiële visum-eis. Maar je hoeft het niet uit te geven. Je moet kunnen aantonen
+          dat je het hebt op het moment van aanvragen — via een bankafschrift is voldoende.
         </FAQ>
         <FAQ q="Hoeveel cash neem ik mee voor de eerste maand?">
-          Reken op AUD 3.000 tot AUD 5.000 (≈ €1.800 tot €3.000) voor je eerste maand, vóór je eerste payslip.
-          Het meeste hiervan is borg en eerste woon-uitgaven.
+          Reken op AUD 3.000–5.000 (≈ €1.800–3.000) voor je eerste maand, vóór je eerste payslip.
+          Het meeste gaat op aan borg en eerste woonkosten.
         </FAQ>
         <FAQ q="Werkt mijn Nederlandse pinpas in Australië?">
-          Technisch wel, maar elke transactie kost wisselkoersmarge plus opname-fee. Open binnen je eerste week
-          een Australische bankrekening (Commonwealth, ANZ, NAB, Westpac), en zet via Wise het minimum voor de
-          eerste maanden over.
+          Technisch wel, maar elke transactie kost wisselkoersmarge plus opname-fee. Open binnen je eerste
+          week een Australische bankrekening en zet via Wise het minimum over. Uitleg op de{' '}
+          <Link to="/banking" className="text-ember underline underline-offset-2">banking-pagina</Link>.
         </FAQ>
-        <FAQ q="Hoeveel verdien ik gemiddeld per uur als WHM?">
-          Het Australische minimumloon is AUD 24,95/uur sinds 1 juli 2025. Met casual loading (25% extra) komt
-          dat voor de meeste backpackerbanen op AUD 31,19/uur. Skilled werk (bouw, mining) kan AUD 35-50/uur.
-          Volledige uitleg op de <Link to="/loon">loon-en-belasting-pagina</Link>.
+        <FAQ q={`Hoeveel verdien ik gemiddeld per uur als WHM?`}>
+          Minimumloon: {loon.uurloon}/uur. Met casual loading (25% extra): {loon.casualLoon}/uur.
+          Skilled werk (bouw, mining) kan AUD 35–50/uur. Meer op de{' '}
+          <Link to="/loon" className="text-ember underline underline-offset-2">loon-pagina</Link>.
         </FAQ>
         <FAQ q="Moet ik mijn budget in EUR of AUD doen?">
-          AUD voor je dagelijkse uitgaven (alles wordt daar in AUD geprijsd), EUR voor de vergelijking met je
-          Nederlandse bankrekening. De calculator hierboven toont beide.
+          AUD voor je dagelijkse uitgaven, EUR voor de vergelijking met je Nederlandse rekening.
+          De calculator hierboven toont beide.
         </FAQ>
 
+        {/* ── Bronnen ──────────────────────────────────────────────── */}
         <h2>Bronnen en kalibratie</h2>
-        <p className="text-sm">
-          De ranges in de calculator zijn gebaseerd op een combinatie van eigen ervaring (14 maanden Australië),
-          Reddit r/australia en r/melbourne, Flatmates.com.au-prijzen voor Sydney/Melbourne/Brisbane,
-          minimumloontabellen van de Fair Work Ombudsman, en SafetyWing/JoHo/Allianz-tarieven.
+        <p className="text-sm text-ink/70 leading-relaxed">
+          De ranges zijn gebaseerd op: eigen verblijf (14 maanden Australië), Reddit r/australia en
+          r/melbourne, Flatmates.com.au-prijzen voor Sydney/Melbourne/Brisbane, minimumloontabellen van
+          de Fair Work Ombudsman, en SafetyWing/JoHo/Allianz-tarieven. De wisselkoers AUD→EUR ≈ 0,61
+          is een momentopname (april 2026, bandbreedte 0,55–0,68). Check Wise of XE op het moment
+          van plannen.
         </p>
-        <p className="text-sm text-slate">
-          De wisselkoers AUD→EUR ≈ 0,61 is een momentopname (april 2026, bandbreedte 0,55-0,68 over een
-          jaar). Voor de actuele koers: check Wise of XE op het moment van plannen.
-        </p>
+
+        <LastChecked
+          date={gechecktOp(loon.lastChecked)}
+          source={loon.bron}
+          sourceUrl={loon.bronUrl}
+        />
       </ArticleLayout>
+
+      {/* ── EmailCapture ──────────────────────────────────────────────── */}
+      <section className="container-wide pb-16">
+        <EmailCapture
+          headline="Download de budgetchecklist"
+          subline="De gratis Australië Start Checklist heeft een complete budgetsectie — eerste maand, vóór vertrek, maandelijks. Inclusief wat mensen structureel vergeten te berekenen."
+        />
+      </section>
     </>
   )
 }
 
-function KostenAside() {
+function KostenSidebar() {
+  const loon = SOT.minimumloon
+
   return (
-    <div className="bg-forest text-bone rounded-2xl p-5">
-      <div className="text-xs uppercase tracking-wider text-ochre mb-2">Snelle vuistregels</div>
-      <ul className="space-y-2 text-sm">
-        <li><span className="text-bone/70">Per maand:</span> AUD 2.000–3.000</li>
-        <li><span className="text-bone/70">Eerste maand:</span> +AUD 1.500–2.500</li>
-        <li><span className="text-bone/70">Spaargeld:</span> AUD 5.000 (visum-eis)</li>
-        <li><span className="text-bone/70">Vóór vertrek:</span> €4.500–6.500</li>
-        <li><span className="text-bone/70">Verdienen:</span> ≈AUD 4.365/mnd netto</li>
-      </ul>
-      <hr className="my-5 border-bone/20" />
-      <div className="text-xs uppercase tracking-wider text-ochre mb-2">Volgende stap</div>
-      <ul className="space-y-2 text-sm">
-        <li><Link to="/verzekering" className="hover:text-ochre underline underline-offset-4">Verzekering vergelijken →</Link></li>
-        <li><Link to="/visum" className="hover:text-ochre underline underline-offset-4">Visum aanvragen →</Link></li>
-        <li><Link to="/werk" className="hover:text-ochre underline underline-offset-4">Werk vinden →</Link></li>
-      </ul>
+    <div className="space-y-5">
+      {/* Vuistregels */}
+      <div>
+        <div className="text-xs font-semibold uppercase tracking-wider text-slate mb-3">
+          Snelle vuistregels
+        </div>
+        <div className="divide-y divide-sand">
+          {[
+            ['Per maand', 'AUD 2.000–3.000'],
+            ['Eerste maand extra', 'AUD 1.500–2.500'],
+            ['Spaarbewijs visum', SOT.visa417.spaarbewijs],
+            ['Vóór vertrek', '€5.500–8.000'],
+            ['Netto verdienen', `≈ ${loon.weekLoon}/week`],
+          ].map(([label, val]) => (
+            <div key={label} className="py-2.5 flex justify-between text-sm">
+              <span className="text-slate">{label}</span>
+              <span className="font-medium text-ink">{val}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Volgende stap */}
+      <div className="border-t border-sand pt-5">
+        <div className="text-xs font-semibold uppercase tracking-wider text-slate mb-3">
+          Volgende stap
+        </div>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <Link to="/verzekering" className="text-ember underline underline-offset-4 hover:text-sunset">
+              Verzekering vergelijken →
+            </Link>
+          </li>
+          <li>
+            <Link to="/visum" className="text-ember underline underline-offset-4 hover:text-sunset">
+              Visum aanvragen →
+            </Link>
+          </li>
+          <li>
+            <Link to="/werk" className="text-ember underline underline-offset-4 hover:text-sunset">
+              Werk vinden →
+            </Link>
+          </li>
+          <li>
+            <Link to="/wonen" className="text-ember underline underline-offset-4 hover:text-sunset">
+              Wonen — hostel of sharehouse? →
+            </Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Loon uitleg */}
+      <div className="border-t border-sand pt-5">
+        <div className="text-xs font-semibold uppercase tracking-wider text-slate mb-2">
+          Minimumloon 2025–2026
+        </div>
+        <p className="text-sm text-ink/80 leading-relaxed mb-2">
+          Normaal: <strong>{loon.uurloon}/uur</strong><br />
+          Casual (incl. loading): <strong>{loon.casualLoon}/uur</strong><br />
+          Super: <strong>{loon.superRate}</strong> bovenop je loon
+        </p>
+        <Link to="/loon" className="text-sm text-ember underline underline-offset-4 hover:text-sunset">
+          Alles over loon en belasting →
+        </Link>
+      </div>
+
+      {/* Compact EmailCapture */}
+      <div className="border-t border-sand pt-5">
+        <EmailCapture
+          variant="compact"
+          headline="Budgetchecklist — gratis"
+          cta="Stuur mij de checklist"
+        />
+      </div>
     </div>
   )
 }
