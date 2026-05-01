@@ -64,3 +64,62 @@ export function ArticleLayout({ children, aside }) {
     </article>
   )
 }
+
+/**
+ * SourceStrip — horizontale bronstrook onder een sectie.
+ * Gebruik op pagina's met officiële of tijdsgevoelige informatie.
+ */
+export function SourceStrip({ source, url, checked, type = 'officiële bron + praktische toelichting' }) {
+  return (
+    <div className="not-prose my-6 border-t border-b border-sand py-3 flex flex-wrap gap-x-6 gap-y-1 text-xs text-slate">
+      <span>
+        <span className="font-medium text-ink/60">Primaire bron:</span>{' '}
+        {url
+          ? <a href={url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-ember">{source}</a>
+          : source}
+      </span>
+      {checked && (
+        <span>
+          <span className="font-medium text-ink/60">Laatst gecheckt:</span> {checked}
+        </span>
+      )}
+      <span>
+        <span className="font-medium text-ink/60">Type:</span> {type}
+      </span>
+    </div>
+  )
+}
+
+/**
+ * MarginNote — redactionele randnotitie met gekleurde linker rand.
+ * type: 'note' (forest) | 'warn' (ember) | 'tip' (ochre)
+ */
+export function MarginNote({ children, type = 'note' }) {
+  const border = {
+    note: 'border-forest/50',
+    warn: 'border-ember',
+    tip:  'border-ochre',
+  }
+  return (
+    <aside className={`not-prose my-5 border-l-4 ${border[type]} pl-4 text-sm text-ink/75 leading-relaxed`}>
+      {children}
+    </aside>
+  )
+}
+
+/**
+ * LastChecked — klein badge onderaan een pagina of sectie.
+ */
+export function LastChecked({ date, source, sourceUrl }) {
+  return (
+    <div className="not-prose mt-10 pt-4 border-t border-sand flex flex-wrap items-center gap-3 text-xs text-slate">
+      <span className="bg-sand px-2.5 py-1 rounded font-medium">✓ Gecheckt {date}</span>
+      {source && (
+        sourceUrl
+          ? <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-ember">Bron: {source}</a>
+          : <span>Bron: {source}</span>
+      )}
+      <span className="text-slate/60">Geen juridisch of financieel advies — controleer officiële bronnen voor beslissingen.</span>
+    </div>
+  )
+}
