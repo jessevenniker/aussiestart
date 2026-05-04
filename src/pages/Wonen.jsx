@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { Callout, FAQ, FactsTable, ArticleLayout } from '../components/Article.jsx'
 import SourceLink from '../components/SourceLink.jsx'
+import PolaroidStrip from '../components/PolaroidStrip.jsx'
 
 const cityPrices = [
   { city: 'Sydney',     hostel: 'AUD 250-350/wk', sharehouse: 'AUD 280-450/wk', cbd: 'AUD 500+/wk' },
@@ -241,6 +242,18 @@ export default function Wonen() {
           <li><SourceLink href="https://www.consumer.vic.gov.au/housing/renting">Consumer Affairs Victoria, huurrechten</SourceLink></li>
         </ul>
       </ArticleLayout>
+
+      <PolaroidStrip
+        eyebrow="Wonen in Australië"
+        title="Van Melbourne tot Western Australia"
+        items={[
+          { src: '/img/foto/melbourne-brighton-beach-huisjes.jpeg', alt: 'Brighton Beach huisjes Melbourne gezien vanaf het water' },
+          { src: '/img/foto/melbourne-brighton-bathing-boxes-muurschildering.jpeg', alt: 'Brighton bathing box met koala en surfer muurschildering, Melbourne' },
+          { src: '/img/foto/western-australia-strand-boardwalk.jpeg', alt: 'Houten boardwalk naar turquoise strand in Western Australia' },
+          { src: '/img/foto/western-australia-baai-panorama-turquoise.jpeg', alt: 'Panoramisch uitzicht over turquoise baai in Western Australia' },
+          { src: '/img/foto/nsw-kustlijn-heuvels-oceaan.jpeg', alt: 'NSW kustlijn met groene heuvels en oceaan' },
+        ]}
+      />
     </>
   )
 }

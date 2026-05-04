@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { Callout, FAQ, FactsTable, ArticleLayout } from '../components/Article.jsx'
 import SourceLink from '../components/SourceLink.jsx'
+import PolaroidStrip from '../components/PolaroidStrip.jsx'
 
 const routes = [
   {
@@ -297,6 +298,17 @@ export default function Werk() {
           <li><SourceLink href="https://www.fairwork.gov.au/find-help-for/visa-holders-migrants">Fair Work, rechten van visa holders</SourceLink></li>
         </ul>
       </ArticleLayout>
+
+      <PolaroidStrip
+        eyebrow="Werken in Australië"
+        title="Wat je verdient als je werkt waar anderen vakantie vieren"
+        items={[
+          { src: '/img/foto/australie-melkweg-sterrenhemel.jpeg', alt: 'Melkweg boven het Australische outback, sterrenhemel' },
+          { src: '/img/foto/australie-melkweg-nachtlucht-outback.jpeg', alt: 'Nachtlucht met melkweg en bomen, outback Australië' },
+          { src: '/img/foto/cairns-millaa-millaa-waterval-regenwoud.jpeg', alt: 'Millaa Millaa waterval in het Cairns regenwoud, Queensland' },
+          { src: '/img/foto/australie-zeilboten-zonsondergang-eilanden.jpeg', alt: 'Zeilboten bij zonsondergang voor eilanden, Australië' },
+        ]}
+      />
     </>
   )
 }

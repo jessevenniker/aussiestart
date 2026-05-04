@@ -23,15 +23,25 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-        <div>
-          <div className="text-xs uppercase tracking-wider text-ochre mb-3">Over</div>
-          <ul className="space-y-1 text-sm">
-            {footerNav.map(item => (
-              <li key={item.path}>
-                <Link to={item.path} className="hover:text-ochre">{item.label}</Link>
-              </li>
-            ))}
-          </ul>
+        <div className="space-y-6">
+          <div>
+            <div className="text-xs uppercase tracking-wider text-ochre mb-3">Steden</div>
+            <ul className="space-y-1 text-sm">
+              <li><Link to="/sydney" className="hover:text-ochre">Sydney</Link></li>
+              <li><Link to="/melbourne" className="hover:text-ochre">Melbourne</Link></li>
+            </ul>
+          </div>
+          <div>
+            <div className="text-xs uppercase tracking-wider text-ochre mb-3">Over</div>
+            <ul className="space-y-1 text-sm">
+              {footerNav.map(item => (
+                <li key={item.path}>
+                  <Link to={item.path} className="hover:text-ochre">{item.label}</Link>
+                </li>
+              ))}
+              <li><Link to="/zelf-regelen-of-bureau" className="hover:text-ochre">Bureau vs. zelf regelen</Link></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className="border-t border-bone/10">

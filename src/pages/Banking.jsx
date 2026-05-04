@@ -142,8 +142,8 @@ export default function Banking() {
           <li>Eventueel TFN (helpt om rente-inhouding te voorkomen, zie hieronder)</li>
         </ul>
         <p>
-          Vrijwel alle banken doen de fysieke verificatie binnen 30 minuten. Je krijgt direct een tijdelijk
-          debit-card mee (BPay) en het echte plastic card volgt 5-10 werkdagen later per post.
+          Vrijwel alle banken doen de fysieke verificatie binnen 30 minuten. Je krijgt direct een tijdelijke
+          digitale debit-card (via de bank-app, tap-and-pay) en het fysieke plastic card volgt 5-10 werkdagen later per post.
         </p>
 
         <h2>Pre-opening vs aankomst-opening</h2>

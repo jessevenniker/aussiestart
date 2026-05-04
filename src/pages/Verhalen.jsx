@@ -9,7 +9,7 @@ const themas = [
   {
     label: 'Eerste week',
     omschrijving:
-      'Aankomst, hostel, SIM, bankrekening, TFN. Hoe die eerste week er in de praktijk uitzag — inclusief wat misging en wat verrassend makkelijk was.',
+      'Aankomst, hostel, SIM, bankrekening, TFN. Hoe die eerste week er in de praktijk uitzag, inclusief wat misging en wat verrassend makkelijk was.',
   },
   {
     label: 'Budget & werk',
@@ -19,7 +19,7 @@ const themas = [
   {
     label: 'Wonen & scams',
     omschrijving:
-      'Van hostel naar sharehouse of camper. Wat te controleren, wat fout ging, hoe opgelicht te worden voorkomen — of niet.',
+      'Van hostel naar sharehouse of camper. Wat te controleren, wat fout ging, hoe opgelicht te worden voorkomen, of niet.',
   },
   {
     label: 'Farmwork',
@@ -122,11 +122,11 @@ export default function Verhalen() {
               </div>
               <ol className="space-y-3 text-sm text-ink/80">
                 {[
-                  'Je vult het formulier in — ca. 10 minuten.',
+                  'Je vult het formulier in, ca. 10 minuten.',
                   'Wij lezen je antwoorden en nemen contact op.',
                   'We schrijven het om naar een leesbaar verhaal.',
                   'Jij leest mee vóór publicatie als je dat wilt.',
-                  'Je naam of pseudoniem — jouw keuze.',
+                  'Je naam of pseudoniem: jouw keuze.',
                 ].map((stap, i) => (
                   <li key={i} className="flex gap-3">
                     <span className="shrink-0 w-5 h-5 rounded-full bg-sand text-slate text-xs flex items-center justify-center font-medium">
@@ -146,12 +146,12 @@ export default function Verhalen() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link to="/eerste-week" className="text-ember underline underline-offset-2 hover:text-sunset">
-                    Eerste week — wat regel je wanneer →
+                    Eerste week: wat regel je wanneer →
                   </Link>
                 </li>
                 <li>
                   <Link to="/kosten" className="text-ember underline underline-offset-2 hover:text-sunset">
-                    Kosten — wat is realistisch? →
+                    Kosten: wat is realistisch? →
                   </Link>
                 </li>
                 <li>
@@ -161,7 +161,7 @@ export default function Verhalen() {
                 </li>
                 <li>
                   <Link to="/wonen" className="text-ember underline underline-offset-2 hover:text-sunset">
-                    Wonen — hostel, sharehouse of camper? →
+                    Wonen: hostel, sharehouse of camper? →
                   </Link>
                 </li>
               </ul>
@@ -174,7 +174,7 @@ export default function Verhalen() {
       <section className="container-wide pb-16">
         <EmailCapture
           headline="Wil je als eerste nieuwe verhalen lezen?"
-          subline="Schrijf je in en ontvang de Australië Start Checklist — plus een bericht zodra de eerste verhalen online staan."
+          subline="Schrijf je in en ontvang de Australië Start Checklist, plus een bericht zodra de eerste verhalen online staan."
         />
       </section>
     </>

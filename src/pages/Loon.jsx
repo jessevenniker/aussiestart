@@ -3,6 +3,70 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { Steps, Callout, FAQ, FactsTable, ArticleLayout } from '../components/Article.jsx'
 import SourceLink from '../components/SourceLink.jsx'
+import JsonLd from '../components/JsonLd.jsx'
+import { SOT } from '../data/sot.js'
+
+const SITE_URL = 'https://australiestart.nl'
+
+const loonSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      '@id': `${SITE_URL}/loon#article`,
+      headline: 'Wat verdien je écht in Australië als Working Holiday Maker?',
+      description: 'Minimumloon AUD 24,95, casual loading 25%, penalty rates, belasting 15% en superannuation. Berekend voor 2026.',
+      url: `${SITE_URL}/loon`,
+      inLanguage: 'nl-NL',
+      dateModified: '2026-04-29',
+      author: { '@id': `${SITE_URL}/#organization` },
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2'],
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${SITE_URL}/loon#faq`,
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Wat is het minimumloon in Australië voor backpackers?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Sinds 1 juli 2025 is het Australische minimumloon AUD 24,95 per uur. Op een casual contract (wat de meeste backpackers hebben) komt daar 25% casual loading bij, waardoor je minimaal AUD 31,19 per uur verdient.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Hoeveel belasting betaal je als Working Holiday Maker?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Als Working Holiday Maker (visum 417 of 462) betaal je 15% belasting over de eerste AUD 45.000, daarna 30% tot AUD 135.000. Dit geldt alleen als je werkgever bij de ATO geregistreerd staat als WHM-employer.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Krijg ik superannuation terug als ik Australië verlaat?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Ja, via de Departing Australia Superannuation Payment (DASP). De ATO houdt 65% in op het belastbare deel, maar je ontvangt de rest (circa 35%) na vertrek. Bij AUD 6.000 super hou je ongeveer AUD 2.100 over.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Hoeveel kun je sparen in een jaar Working Holiday?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Bij voltijd werken aan casual minimumloon verdien je AUD 50.000-60.000 bruto per jaar. Na belasting en levenskosten van gemiddeld AUD 25.000-30.000 voor een grote stad, kun je AUD 15.000-25.000 sparen of aan reizen besteden.',
+          },
+        },
+      ],
+    },
+  ],
+}
 
 export default function Loon() {
   return (
@@ -10,7 +74,11 @@ export default function Loon() {
       <Helmet>
         <title>Wat verdien je als WHM in Australië? Loon en belasting 2026 · Aussiestart</title>
         <meta name="description" content="Minimumloon AUD 24,95, casual loading 25%, penalty rates voor weekend en feestdagen. Wat houd je netto over na belasting en super in 2026?" />
+        <meta property="og:title" content="Loon en belasting Working Holiday Australië 2026" />
+        <meta property="og:description" content="Minimumloon AUD 24,95. Casual loading 25%. Belasting 15%. Superannuation 12% — terugkrijgen bij vertrek. Echte cijfers voor Nederlanders." />
+        <meta property="og:type" content="article" />
       </Helmet>
+      <JsonLd data={loonSchema} />
       <PageHeader
         eyebrow="Werk · Loon en belasting"
         title="Wat verdien je écht in Australië als Working Holiday Maker?"

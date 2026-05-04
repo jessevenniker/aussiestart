@@ -51,7 +51,7 @@ function CaptureForm({ action, cta, isReady, compact = false }) {
     return (
       <div className={compact ? '' : 'flex flex-wrap gap-3'}>
         <a
-          href="mailto:jesse.venniker@gmail.com?subject=Australië%20Start%20Checklist"
+          href="mailto:hello@australiestart.nl?subject=Australië%20Start%20Checklist"
           className={compact
             ? 'block w-full text-center btn-primary text-sm'
             : 'btn-primary text-sm'
@@ -59,11 +59,6 @@ function CaptureForm({ action, cta, isReady, compact = false }) {
         >
           {cta}
         </a>
-        {!compact && (
-          <p className="text-xs text-bone/50 self-center italic">
-            E-mailkoppeling volgt zodra Mailchimp is ingesteld.
-          </p>
-        )}
       </div>
     )
   }

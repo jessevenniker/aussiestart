@@ -3,38 +3,62 @@ import { Link } from 'react-router-dom'
 import Hero from '../components/Hero.jsx'
 import PhotoStrip from '../components/PhotoStrip.jsx'
 import EmailCapture from '../components/EmailCapture.jsx'
+import JsonLd from '../components/JsonLd.jsx'
 import { SOT } from '../data/sot.js'
+
+const SITE_URL = 'https://australiestart.nl'
+
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${SITE_URL}/#webpage`,
+  url: SITE_URL,
+  name: 'Aussiestart: Working Holiday Australië zelf regelen',
+  description:
+    'Onafhankelijke gids voor Nederlanders die met een Working Holiday visum naar Australië gaan. Visum, kosten, werk, wonen, 88-dagenregel, zonder bureau, zonder €2.000 pakket.',
+  inLanguage: 'nl-NL',
+  isPartOf: { '@id': `${SITE_URL}/#website` },
+  about: {
+    '@type': 'Thing',
+    name: 'Working Holiday visum Australië',
+    description: 'Het Working Holiday visum subclass 417 stelt Nederlanders van 18 t/m 30 jaar in staat om 12 maanden in Australië te verblijven en werken.',
+  },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['h1', '.facts-strip'],
+  },
+}
 
 const galleryPhotos = [
   {
-    src: '/img/foto/IMG_7673.jpg',
+    src: '/img/foto/tomaree-head-zonsondergang-port-stephens.jpg',
     alt: 'Zonsondergang boven Tomaree Head, NSW kustlijn',
     title: 'Tomaree, NSW',
     caption: 'Drie uur boven Sydney. Goedkoop kamperen, leeg strand.',
   },
   {
-    src: '/img/foto/IMG_3450.jpg',
-    alt: 'Three Sisters in de Blue Mountains, NSW',
-    title: 'Blue Mountains',
-    caption: 'Dagtrip vanuit Sydney. Trein, geen auto nodig.',
+    src: '/img/foto/sydney-oudejaarsavond-vuurwerk-operahouse.jpg',
+    alt: 'Oudejaarsavond vuurwerk boven Sydney Opera House en Harbour Bridge',
+    title: 'Sydney NYE',
+    caption: 'Het indrukwekkendste vuurwerk ter wereld, gratis kijken vanaf het water.',
   },
   {
-    src: '/img/foto/IMG_7492.jpg',
-    alt: 'Zandduinen aan de Australische kust, blauwe lucht',
-    title: 'Stockton Dunes',
-    caption: 'Sandboarden tussen werkdagen door.',
+    src: '/img/foto/australie-koala-eucalyptus-boom.jpeg',
+    alt: 'Koala klimt in eucalyptusboom, Queensland',
+    title: 'Wildlife',
+    caption: 'Je ziet ze op de meest onverwachte plekken.',
   },
 ]
 
 const scenarios = [
   {
     label: 'Ik oriënteer me',
-    omschrijving: 'Je weet dat je wilt, maar weet nog niet hoe dat er in de praktijk uitziet — kosten, visum, werk.',
+    omschrijving: 'Je weet dat je wilt, maar weet nog niet hoe dat er in de praktijk uitziet: kosten, visum, werk.',
     link: '/begin-hier',
     cta: 'Lees de startgids',
   },
   {
-    label: 'Ik ga — maar hoe?',
+    label: 'Ik ga, maar hoe?',
     omschrijving: 'Je hebt besloten te gaan. Nu wil je weten: wat in welke volgorde, wat kost het écht, welke valkuilen zijn er?',
     link: '/begin-hier',
     cta: 'Open het 14-stappenplan',
@@ -59,12 +83,17 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Aussiestart — Working Holiday Australië zelf regelen</title>
+        <title>Aussiestart: Working Holiday Australië zelf regelen</title>
         <meta
           name="description"
-          content="Onafhankelijke gids voor het Working Holiday visum naar Australië. Stappenplannen, eerlijke kosten en ervaringen — zonder bureau, zonder €2.000 pakket."
+          content="Onafhankelijke gids voor het Working Holiday visum naar Australië. Stappenplannen, eerlijke kosten en ervaringen, zonder bureau, zonder €2.000 pakket."
         />
+        <meta property="og:title" content="Aussiestart: Working Holiday Australië zelf regelen" />
+        <meta property="og:description" content="Visum AUD 670 zelf aanvragen. Eerlijke kosten, 88-dagenregel, werk en wonen, zonder bureau, zonder €2.000 pakket." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${SITE_URL}/img/foto/sydney-opera-house-panorama-haven.jpg`} />
       </Helmet>
+      <JsonLd data={homeSchema} />
 
       {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <Hero />
@@ -133,7 +162,7 @@ export default function Home() {
               Van aanmelding tot eerste werkdag
             </h2>
             <p className="mt-3 text-bone/65 text-sm max-w-prose">
-              In deze volgorde pak je het aan — niet andersom, niet door een bureau.
+              In deze volgorde pak je het aan, niet andersom, niet door een bureau.
             </p>
           </div>
 
@@ -156,7 +185,7 @@ export default function Home() {
 
           <div className="mt-8 pt-6 border-t border-bone/15">
             <Link to="/begin-hier" className="inline-flex items-center gap-2 bg-ochre text-forest text-sm font-medium px-5 py-2.5 rounded-full hover:bg-ochre/80 transition-colors no-underline">
-              Alles in volgorde — het 14-stappenplan →
+              Alles in volgorde: het 14-stappenplan →
             </Link>
           </div>
         </div>
@@ -171,7 +200,7 @@ export default function Home() {
           </h2>
           <p className="mt-5 text-ink/80 leading-relaxed max-w-prose">
             Bemiddelingsbureaus verkopen werkvisum-pakketten van €549 tot €2.050.
-            Het meeste daarvan kun je zelf — sneller en goedkoper. Aussiestart is
+            Het meeste daarvan kun je zelf, sneller en goedkoper. Aussiestart is
             een onafhankelijk naslagwerk dat je door de stappen heen helpt,
             met eerlijke cijfers en de tips die bureaus je niet vertellen.
           </p>
@@ -188,6 +217,14 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <div className="mt-6">
+            <Link
+              to="/zelf-regelen-of-bureau"
+              className="text-sm text-forest underline underline-offset-4 hover:text-ember transition-colors"
+            >
+              Bureau vs. zelf regelen: de eerlijke vergelijking →
+            </Link>
+          </div>
         </div>
 
         {/* Rechterkolom: geen afgeronde kaart — redactionele lijst met regelscheiding */}

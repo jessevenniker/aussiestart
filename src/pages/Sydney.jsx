@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { ArticleLayout, Callout, FactsTable, FAQ } from '../components/Article.jsx'
 import { viatorUrl, getyourguideUrl } from '../data/affiliates.js'
+import PolaroidStrip from '../components/PolaroidStrip.jsx'
 
 function ExtIcon() {
   return (
@@ -125,8 +126,8 @@ export default function Sydney() {
       <figure className="container-wide pt-8 pb-4">
         <div className="aspect-[16/9] sm:aspect-[21/9] overflow-hidden rounded-2xl">
           <img
-            src="/img/foto/IMG_1008.jpg"
-            alt="Sydney Opera House gezien vanaf het water"
+            src="/img/foto/sydney-opera-house-panorama-haven.jpg"
+            alt="Sydney Opera House panorama met haven, gezien vanaf Circular Quay"
             className="w-full h-full object-cover"
           />
         </div>
@@ -302,6 +303,23 @@ export default function Sydney() {
         </FAQ>
 
       </ArticleLayout>
+
+      <PolaroidStrip
+        eyebrow="Eigen foto's"
+        title="Sydney in het echt"
+        items={[
+          { src: '/img/foto/sydney-opera-house-cruiseschip-nacht.jpeg', alt: 'Sydney Opera House met cruiseschip bij nacht' },
+          { src: '/img/foto/sydney-opera-house-vivid-festival.jpeg', alt: 'Sydney Opera House tijdens Vivid festival met verlichte brug' },
+          { src: '/img/foto/sydney-harbour-bridge-luna-park-zonsondergang.jpg', alt: 'Sydney Harbour Bridge bij zonsondergang met Luna Park' },
+          { src: '/img/foto/sydney-bondi-beach-overzicht.jpeg', alt: 'Bondi Beach overzicht vanuit de lucht' },
+          { src: '/img/foto/sydney-coastal-walk-bronte-coogee.jpeg', alt: 'Sydney coastal walk tussen Bronte en Coogee' },
+          { src: '/img/foto/sea-cliff-bridge-grand-pacific-drive.jpeg', alt: 'Sea Cliff Bridge aan de Grand Pacific Drive, NSW' },
+          { src: '/img/foto/sydney-opera-house-panorama-haven.jpg', alt: 'Sydney Opera House panorama met haven op de achtergrond' },
+          { src: '/img/foto/sydney-opera-house-zeilen-close.jpg', alt: 'Sydney Opera House zeilen close-up van onderen' },
+          { src: '/img/foto/gerroa-kust-nsw-panorama.jpeg', alt: 'Kustplaats Gerroa, NSW met bord en baai' },
+          { src: '/img/foto/nsw-illawarra-kustlijn-groene-heuvels.jpeg', alt: 'Illawarra kustlijn met groene heuvels richting de zee' },
+        ]}
+      />
     </>
   )
 }
@@ -317,6 +335,16 @@ function SydneyAside() {
           <li><Link to="/banking" className="text-ochre underline underline-offset-4">Bankrekening openen →</Link></li>
           <li><Link to="/hostels" className="text-ochre underline underline-offset-4">Hostels in Sydney →</Link></li>
         </ul>
+      </div>
+      <div className="border border-sand rounded-2xl p-5">
+        <div className="text-xs font-semibold uppercase tracking-wider text-slate mb-3">Andere stad?</div>
+        <Link
+          to="/melbourne"
+          className="block text-sm font-medium text-forest hover:underline"
+        >
+          Melbourne gids →
+        </Link>
+        <p className="text-xs text-slate mt-1">Cultuur, cafes, Free Tram Zone, Fitzroy</p>
       </div>
       <div className="bg-sand rounded-2xl p-5">
         <div className="text-xs uppercase tracking-wider text-slate mb-2">Feiten</div>

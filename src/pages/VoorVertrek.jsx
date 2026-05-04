@@ -4,6 +4,7 @@ import PageHeader from '../components/PageHeader.jsx'
 import { Callout, FAQ, ArticleLayout } from '../components/Article.jsx'
 import SourceLink from '../components/SourceLink.jsx'
 import { amazonNlUrl } from '../data/affiliates.js'
+import PolaroidStrip from '../components/PolaroidStrip.jsx'
 
 const timeline = [
   {
@@ -228,6 +229,17 @@ export default function VoorVertrek() {
           <li><SourceLink href="https://www.anwb.nl/vakantie/rijbewijs/internationaal-rijbewijs">ANWB, internationaal rijbewijs</SourceLink></li>
         </ul>
       </ArticleLayout>
+
+      <PolaroidStrip
+        eyebrow="Straks"
+        title="Wat je over een paar maanden ziet"
+        items={[
+          { src: '/img/foto/australie-vlucht-jetstar-uitzicht.jpeg', alt: 'Uitzicht vanuit Jetstar vliegtuig over Australië' },
+          { src: '/img/foto/great-barrier-reef-eiland-vliegtuig.jpg', alt: 'Great Barrier Reef koraaleiland vanuit vliegtuig, Queensland' },
+          { src: '/img/foto/lucky-bay-western-australia-wit-strand.jpeg', alt: 'Lucky Bay wit zandstrand Western Australia' },
+          { src: '/img/foto/cairns-green-island-luchtfoto-koraalrif.jpeg', alt: 'Green Island koraalrif luchtfoto vanuit vliegtuig, Cairns' },
+        ]}
+      />
     </>
   )
 }

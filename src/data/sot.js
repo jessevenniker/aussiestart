@@ -47,6 +47,17 @@ export const SOT = {
     lastChecked:  '2026-04-28',
   },
 
+  // ─── Wisselkoers ──────────────────────────────────────────────────────────
+  wisselkoers: {
+    audToEur:     0.61,        // 1 AUD = ~0,61 EUR
+    eurToAud:     1.64,        // 1 EUR = ~1,64 AUD
+    bandbreedte:  '0,55–0,68', // historische range afgelopen 2 jaar
+    geldigVanaf:  'mei 2026',
+    bron:         'xe.com',
+    bronUrl:      'https://www.xe.com/currencyconverter/convert/?Amount=1&From=AUD&To=EUR',
+    lastChecked:  '2026-05-04',
+  },
+
   // ─── Australische bevolking / statistieken ───────────────────────────────
   stats: {
     nederlandersPerJaar:  '~2.600',

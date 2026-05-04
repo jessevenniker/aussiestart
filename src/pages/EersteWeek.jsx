@@ -4,7 +4,94 @@ import PageHeader from '../components/PageHeader.jsx'
 import { ArticleLayout, SourceStrip, MarginNote, LastChecked } from '../components/Article.jsx'
 import AffiliateLink from '../components/AffiliateLink.jsx'
 import EmailCapture from '../components/EmailCapture.jsx'
+import JsonLd from '../components/JsonLd.jsx'
 import { SOT, gechecktOp } from '../data/sot.js'
+
+const SITE_URL = 'https://australiestart.nl'
+
+// ─── Structured data ─────────────────────────────────────────────────────────
+const eersteWeekSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'HowTo',
+      '@id': `${SITE_URL}/eerste-week#howto`,
+      name: 'Je eerste week in Australië regelen: dag-voor-dag route',
+      description:
+        'Stap-voor-stap gids voor je eerste week in Australië: eSIM activeren, OV-pas kopen, bankrekening openen, Tax File Number aanvragen, Medicare inschrijven en werk zoeken.',
+      inLanguage: 'nl-NL',
+      totalTime: 'P7D',
+      estimatedCost: {
+        '@type': 'MonetaryAmount',
+        currency: 'AUD',
+        value: '430-580',
+      },
+      step: [
+        {
+          '@type': 'HowToStep',
+          name: 'Voor vertrek: eSIM activeren',
+          text: 'Activeer je eSIM vóór je in het vliegtuig stapt. Telsim (~€13, Telstra-netwerk) of Airalo werken goed. Vanaf landing heb je meteen internet voor de taxi-app en je hostel-adres.',
+          url: `${SITE_URL}/esim`,
+          position: 1,
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Dag 1: OV-pas kopen en inchecken',
+          text: 'Koop een OV-pas bij de eerste kiosk na aankomst. Sydney: OPAL. Melbourne: Myki. Brisbane: Go Card. Check in bij je hostel en verken de buurt, zoek de dichtstbijzijnde bank en supermarkt.',
+          position: 2,
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Dag 2–3: Bankrekening openen',
+          text: 'Ga naar een branch van CommBank, ANZ, NAB of Westpac met je paspoort. Open een everyday-account. Je TFN heb je niet direct nodig, je kunt dat later doorgeven. Je bankpas is er vaak dezelfde of de volgende dag.',
+          url: `${SITE_URL}/banking`,
+          position: 3,
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Dag 2–3: Tax File Number aanvragen',
+          text: 'Doe dit online via ato.gov.au, gratis, duurt ~10 minuten. Zonder TFN betaal je 45% belasting in plaats van 15%. Je TFN komt per post of e-mail binnen 5–28 dagen. Gebruik je hostel-adres.',
+          url: `${SITE_URL}/tax-file-number`,
+          position: 4,
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Dag 3–7: Medicare inschrijven',
+          text: 'Nederlanders hebben recht op Medicare via het bilateraal verdrag. Ga naar een Medicare Service Centre met je paspoort en je Nederlandse zorgverzekeringsbewijs (EHIC of verzekeringskaart). Inschrijving is gratis.',
+          url: `${SITE_URL}/medicare`,
+          position: 5,
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Dag 3–7: CV updaten en eerste sollicitaties',
+          text: 'Australisch CV-formaat: maximaal 2 pagina\'s, volgorde contact – summary – work experience – skills. Loop cafés, restaurants en winkels binnen, hospitality-banen worden nog steeds via de voordeur gevonden.',
+          url: `${SITE_URL}/werk`,
+          position: 6,
+        },
+        {
+          '@type': 'HowToStep',
+          name: 'Week 1–2: Woonopties verkennen',
+          text: 'Flatmates.com.au, Facebook-groepen (bijv. "Dutch in Sydney"), Gumtree. Bekijk meerdere opties en betaal nooit bond zonder de kamer gezien te hebben.',
+          url: `${SITE_URL}/wonen`,
+          position: 7,
+        },
+      ],
+    },
+    {
+      '@type': 'Article',
+      '@id': `${SITE_URL}/eerste-week#article`,
+      headline: 'Je eerste week in Australië: dag-voor-dag route',
+      description:
+        'TFN, Medicare, bankrekening, eSIM, OV-pas, in de juiste volgorde voor je eerste week in Australië als Working Holiday Maker.',
+      url: `${SITE_URL}/eerste-week`,
+      dateModified: '2026-04-28',
+      inLanguage: 'nl-NL',
+      author: { '@id': `${SITE_URL}/#organization` },
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+    },
+  ],
+}
 
 /* Dag-tot-dag planning ─────────────────────────────────────────────────── */
 const dagplan = [
@@ -15,7 +102,7 @@ const dagplan = [
       {
         titel: 'eSIM activeren',
         urgentie: 'Verplicht',
-        tekst: 'Activeer je eSIM vóór je in het vliegtuig stapt. Vanaf landing heb je meteen internet — voor de taxi-app, je hostel-adres en je eerste berichten. Telsim (~€13, Telstra-netwerk) of Airalo werken goed.',
+        tekst: 'Activeer je eSIM vóór je in het vliegtuig stapt. Vanaf landing heb je meteen internet, voor de taxi-app, je hostel-adres en je eerste berichten. Telsim (~€13, Telstra-netwerk) of Airalo werken goed.',
         link: '/esim',
       },
     ],
@@ -45,13 +132,13 @@ const dagplan = [
       {
         titel: 'Bankrekening openen',
         urgentie: 'Prioriteit',
-        tekst: 'Ga naar een branch van CommBank, ANZ, NAB of Westpac met je paspoort. Open een everyday-account. Je TFN hoef je nu nog niet te hebben — je kunt dat later doorgeven. Je Australische bankpas is er vaak dezelfde dag of de volgende dag.',
+        tekst: 'Ga naar een branch van CommBank, ANZ, NAB of Westpac met je paspoort. Open een everyday-account. Je TFN hoef je nu nog niet te hebben, je kunt dat later doorgeven. Je Australische bankpas is er vaak dezelfde dag of de volgende dag.',
         link: '/banking',
       },
       {
         titel: 'Tax File Number aanvragen',
         urgentie: 'Prioriteit',
-        tekst: 'Doe dit online via ato.gov.au, gratis, duurt ~10 minuten. Zonder TFN betaal je 45% belasting in plaats van 15%. Je TFN komt per post of e-mail binnen 5–28 dagen. Gebruik je hostel-adres — dat mag gewoon.',
+        tekst: 'Doe dit online via ato.gov.au, gratis, duurt ~10 minuten. Zonder TFN betaal je 45% belasting in plaats van 15%. Je TFN komt per post of e-mail binnen 5–28 dagen. Gebruik je hostel-adres, dat mag gewoon.',
         link: '/tax-file-number',
       },
     ],
@@ -69,7 +156,7 @@ const dagplan = [
       {
         titel: 'CV updaten en eerste sollicitaties',
         urgentie: 'Zo snel mogelijk',
-        tekst: "Australisch CV-formaat is anders dan Nederlands. Maximaal 2 pagina's, volgorde: contact, summary, work experience, skills. Loop cafés, restaurants en winkels binnen — veel banen in hospitality worden nog steeds via de voordeur gevonden, niet via een app.",
+        tekst: "Australisch CV-formaat is anders dan Nederlands. Maximaal 2 pagina's, volgorde: contact, summary, work experience, skills. Loop cafés, restaurants en winkels binnen, veel banen in hospitality worden nog steeds via de voordeur gevonden, niet via een app.",
         link: '/werk',
       },
       {
@@ -101,7 +188,7 @@ const praktischeTips = [
   },
   {
     tip: 'Open je bank vóór je TFN binnen is',
-    uitleg: 'De bank heeft je TFN niet direct nodig — alleen later voor rente-aanslagen. Niet wachten op je TFN kost je een week.',
+    uitleg: 'De bank heeft je TFN niet direct nodig: alleen later voor rente-aanslagen. Niet wachten op je TFN kost je een week.',
   },
   {
     tip: 'Werk zoeken kan al vóór je TFN binnen is',
@@ -123,13 +210,17 @@ export default function EersteWeek() {
   return (
     <>
       <Helmet>
-        <title>Eerste week in Australië — wat regel je wanneer | Aussiestart</title>
-        <meta name="description" content="Dag-tot-dag-route voor je eerste week in Australië. TFN, Medicare, bankrekening, eSIM, OV-pas — in de juiste volgorde, zonder gedoe." />
+        <title>Eerste week in Australië: wat regel je wanneer | Aussiestart</title>
+        <meta name="description" content="Dag-tot-dag-route voor je eerste week in Australië als Working Holiday Maker. TFN, Medicare, bankrekening, eSIM, OV-pas, in de juiste volgorde, zonder gedoe." />
+        <meta property="og:title" content="Je eerste week in Australië: dag voor dag" />
+        <meta property="og:description" content="TFN, Medicare, bankrekening, eSIM, in de juiste volgorde. Zodat je niet in week 4 nog rondloopt zonder inkomen." />
+        <meta property="og:type" content="article" />
       </Helmet>
+      <JsonLd data={eersteWeekSchema} />
       <PageHeader
         eyebrow="Praktische gids · Eerste week"
-        title="Je eerste week in Australië — dag voor dag"
-        intro="TFN, Medicare, bankrekening, eSIM, OV-pas. In de juiste volgorde — zodat je niet in week 4 nog rond hoeft te bellen."
+        title="Je eerste week in Australië: dag voor dag"
+        intro="TFN, Medicare, bankrekening, eSIM, OV-pas. In de juiste volgorde, zodat je niet in week 4 nog rond hoeft te bellen."
         lastChecked={gechecktOp(ew.lastChecked)}
         source="Eigen ervaring + officiële instanties (ATO, Services Australia)"
       />
@@ -138,8 +229,8 @@ export default function EersteWeek() {
       <figure className="container-wide pt-8 pb-2">
         <div className="aspect-[16/9] sm:aspect-[21/9] overflow-hidden">
           <img
-            src="/img/foto/IMG_1008.jpg"
-            alt="Sydney Opera House van onderen, blauwe lucht"
+            src="/img/foto/sydney-opera-house-zeilen-close.jpg"
+            alt="Sydney Opera House zeilen van onderen gezien, blauwe lucht"
             className="w-full h-full object-cover"
           />
         </div>
@@ -152,7 +243,7 @@ export default function EersteWeek() {
 
         <p>
           De eerste week bepaalt of je binnen 14 dagen werkt of pas in week 5 je eerste payslip krijgt
-          omdat je geen TFN had. Hieronder een dag-tot-dag route — niet per dringendheid, maar in de
+          omdat je geen TFN had. Hieronder een dag-tot-dag route, niet per dringendheid, maar in de
           volgorde die logistiek het meest efficiënt is.
         </p>
 
@@ -165,7 +256,7 @@ export default function EersteWeek() {
 
         <MarginNote type="note">
           Gemiddelde kosten eerste week in Australië: <strong>{ew.totaalRange}</strong>. Dit zijn eenmalige
-          kosten bovenop je normale maandbudget — hostel, OV-pas, eerste boodschappen, SIM.
+          kosten bovenop je normale maandbudget: hostel, OV-pas, eerste boodschappen, SIM.
         </MarginNote>
 
         {/* ── Van vliegveld naar stad ────────────────────────────────── */}
@@ -263,7 +354,7 @@ export default function EersteWeek() {
         <MarginNote type="warn">
           <strong>Wat kan wachten tot week 2:</strong> kamer zoeken (doe het wel snel, maar niet meteen
           dag 1), CV helemaal op orde maken, stadsverkenningstochten, daguitstapjes. Prioriteer bank en
-          TFN eerst — die blokkeren je inkomen als je ze uitstelt.
+          TFN eerst: die blokkeren je inkomen als je ze uitstelt.
         </MarginNote>
 
         {/* ── Stad-specifiek ────────────────────────────────────────── */}
@@ -294,7 +385,7 @@ export default function EersteWeek() {
       <section className="container-wide pb-16">
         <EmailCapture
           headline="Download het eerste-week stappenplan"
-          subline="De gratis Australië Start Checklist bevat de volledige eerste-week route — inclusief welke formulieren je meeneemt, welk adres je gebruikt en wat er mis kan gaan."
+          subline="De gratis Australië Start Checklist bevat de volledige eerste-week route, inclusief welke formulieren je meeneemt, welk adres je gebruikt en wat er mis kan gaan."
         />
       </section>
     </>
@@ -354,7 +445,7 @@ function EersteWeekSidebar() {
             ['/medicare', 'Medicare'],
             ['/banking', 'Bankrekening openen'],
             ['/esim', 'eSIM of simkaart'],
-            ['/wonen', 'Wonen — hostel of sharehouse'],
+            ['/wonen', 'Wonen: hostel of sharehouse'],
             ['/werk', 'Werk zoeken'],
           ].map(([path, label]) => (
             <li key={path}>
@@ -370,7 +461,7 @@ function EersteWeekSidebar() {
       <div className="border-t border-sand pt-5">
         <EmailCapture
           variant="compact"
-          headline="Eerste-week checklist — gratis"
+          headline="Eerste-week checklist: gratis"
           cta="Stuur mij de checklist"
         />
       </div>

@@ -4,9 +4,43 @@ import { Helmet } from 'react-helmet-async'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import JsonLd from './components/JsonLd.jsx'
 import Home from './pages/Home.jsx'
 
 const SITE_URL = 'https://australiestart.nl'
+
+// ─── Sitewide JSON-LD: Organization + WebSite ────────────────────────────────
+// Rendered once in App, aanwezig op elke pagina.
+// GEO: helpt AI-systemen Aussiestart als entiteit herkennen.
+const SITE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'Aussiestart',
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/favicon.svg`,
+      },
+      description:
+        'Onafhankelijke redactionele gids voor Nederlanders die een Working Holiday naar Australië plannen. Eerlijk, praktisch, zonder bemiddelaar.',
+      inLanguage: 'nl-NL',
+      sameAs: [],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: 'Aussiestart',
+      description:
+        'Working holiday Australië zelf regelen — visum, kosten, werk, wonen en de 88-dagenregel.',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      inLanguage: 'nl-NL',
+    },
+  ],
+}
 
 const BeginHier           = lazy(() => import('./pages/BeginHier.jsx'))
 const Visum               = lazy(() => import('./pages/Visum.jsx'))
@@ -28,6 +62,12 @@ const Over                = lazy(() => import('./pages/Over.jsx'))
 const AffiliateDisclosure = lazy(() => import('./pages/AffiliateDisclosure.jsx'))
 const Bronnen             = lazy(() => import('./pages/Bronnen.jsx'))
 const Contact             = lazy(() => import('./pages/Contact.jsx'))
+const AchtentachtigDagen        = lazy(() => import('./pages/AchtentachtigDagen.jsx'))
+const AchtentachtigDagenChecker = lazy(() => import('./pages/AchtentachtigDagenChecker.jsx'))
+const Startkit            = lazy(() => import('./pages/Startkit.jsx'))
+const StartkitDownload    = lazy(() => import('./pages/StartkitDownload.jsx'))
+const ZelfRegelenOfBureau = lazy(() => import('./pages/ZelfRegelenOfBureau.jsx'))
+const Melbourne           = lazy(() => import('./pages/Melbourne.jsx'))
 const NotFound            = lazy(() => import('./pages/NotFound.jsx'))
 
 function PageLoader() {
@@ -58,7 +98,12 @@ export default function App() {
       <Helmet>
         <link rel="canonical" href={canonical} />
         <meta property="og:url" content={canonical} />
+        {/* hreflang: NL-variant + x-default voor internationale zoekmachines */}
+        <link rel="alternate" hreflang="nl" href={canonical} />
+        <link rel="alternate" hreflang="x-default" href={canonical} />
       </Helmet>
+      {/* Sitewide structured data — Organization + WebSite */}
+      <JsonLd data={SITE_SCHEMA} />
       <Header />
       <ScrollToTop />
       <main className="flex-1">
@@ -79,7 +124,13 @@ export default function App() {
             <Route path="/loon"                  element={<Loon />} />
             <Route path="/hostels"               element={<Hostels />} />
             <Route path="/esim"                  element={<Esim />} />
+            <Route path="/88-dagen"              element={<AchtentachtigDagen />} />
+            <Route path="/88-dagen-checker"     element={<AchtentachtigDagenChecker />} />
             <Route path="/sydney"                element={<Sydney />} />
+            <Route path="/startkit"              element={<Startkit />} />
+            <Route path="/startkit-download"     element={<StartkitDownload />} />
+            <Route path="/zelf-regelen-of-bureau" element={<ZelfRegelenOfBureau />} />
+            <Route path="/melbourne"             element={<Melbourne />} />
             <Route path="/verhalen"              element={<Verhalen />} />
             <Route path="/over"                  element={<Over />} />
             <Route path="/affiliate-disclosure"  element={<AffiliateDisclosure />} />
