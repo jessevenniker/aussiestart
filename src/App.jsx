@@ -27,7 +27,10 @@ const SITE_SCHEMA = {
       description:
         'Onafhankelijke redactionele gids voor Nederlanders die een Working Holiday naar Australië plannen. Eerlijk, praktisch, zonder bemiddelaar.',
       inLanguage: 'nl-NL',
-      sameAs: [],
+      sameAs: [
+        'https://australiestart.nl',
+        // Voeg toe zodra actief: 'https://www.instagram.com/aussiestart'
+      ],
     },
     {
       '@type': 'WebSite',

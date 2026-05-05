@@ -2,6 +2,49 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import PageHeader from '../components/PageHeader.jsx'
 import { Callout, ArticleLayout } from '../components/Article.jsx'
+import JsonLd from '../components/JsonLd.jsx'
+import AffiliateLink from '../components/AffiliateLink.jsx'
+
+const SITE_URL = 'https://australiestart.nl'
+
+const beginHierSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'HowTo',
+      '@id': `${SITE_URL}/begin-hier#howto`,
+      name: '14 stappen voor je Working Holiday Australië — van oriëntatie tot eerste payslip',
+      description: 'Stappenplan voor Nederlanders die met een Working Holiday visum (subclass 417) naar Australië gaan. Visum, verzekering, vluchten, eSIM, TFN, Medicare en eerste baan.',
+      url: `${SITE_URL}/begin-hier`,
+      inLanguage: 'nl-NL',
+      totalTime: 'P8W',
+      tool: [
+        { '@type': 'HowToTool', name: 'ImmiAccount (online visumportaal DHA)' },
+        { '@type': 'HowToTool', name: 'Wise (internationale transfers)' },
+      ],
+      step: [
+        { '@type': 'HowToStep', position: 1, name: 'Check of het 417-visum bij je past', url: `${SITE_URL}/visum`, text: 'Nederlands paspoort, 18 t/m 30 jaar, geen kinderen ten laste, niet eerder twee 417-visums gehad. Spaargeld AUD 5.000 op bankafschrift kunnen tonen.' },
+        { '@type': 'HowToStep', position: 2, name: 'Bereken het echte budget', url: `${SITE_URL}/kosten`, text: 'Reken op €7.000-9.000 spaargeld voor vertrek plus AUD 2.500-3.500 per maand levensonderhoud.' },
+        { '@type': 'HowToStep', position: 3, name: 'Vergelijk verzekeringen', url: `${SITE_URL}/verzekering`, text: 'SafetyWing, JoHo, World Nomads en Allianz vergeleken. Medicare dekt de basis, reisverzekering vult de gaten.' },
+        { '@type': 'HowToStep', position: 4, name: 'Vraag het visum aan', url: `${SITE_URL}/visum`, text: 'AUD 670 via ImmiAccount, online in 30 minuten. Minstens 4-6 weken voor vertrek aanvragen.' },
+        { '@type': 'HowToStep', position: 5, name: 'Boek je vlucht', url: `${SITE_URL}/voor-vertrek`, text: 'Open jaar return is meestal goedkoper dan twee enkelreizen. Budget €1.000-1.700.' },
+        { '@type': 'HowToStep', position: 6, name: 'Sluit verzekering af', url: `${SITE_URL}/verzekering`, text: 'SafetyWing kun je ook na vertrek nog activeren. JoHo en Allianz vereisen een jaarpolis.' },
+        { '@type': 'HowToStep', position: 7, name: 'Open Wise en eventueel CommBank', url: `${SITE_URL}/banking`, text: 'Wise voor EUR-AUD transfers. Australische bank voor salaris en lokale uitgaven.' },
+        { '@type': 'HowToStep', position: 8, name: 'Vaccinaties en internationaal rijbewijs', url: `${SITE_URL}/voor-vertrek`, text: 'Hep A/B en tetanus via GGD. Internationaal rijbewijs bij ANWB voor €17.' },
+        { '@type': 'HowToStep', position: 9, name: 'Activeer eSIM', url: `${SITE_URL}/esim`, text: 'Telsim voor lange WHV, Airalo voor multi-country. Activeer voor vertrek zodat internet werkt bij landing.' },
+        { '@type': 'HowToStep', position: 10, name: 'Pak en boek eerste hostel', url: `${SITE_URL}/hostels`, text: 'Eén 65L-backpack is genoeg. Boek 3-4 nachten hostel vooraf.' },
+        { '@type': 'HowToStep', position: 11, name: 'Vraag TFN aan en schrijf in bij Medicare', url: `${SITE_URL}/tax-file-number`, text: 'TFN gratis online via ATO. Medicare via Service Centre met EHIC en NL-zorgpolis.' },
+        { '@type': 'HowToStep', position: 12, name: 'Open Australische bankrekening en OV-pas', url: `${SITE_URL}/eerste-week`, text: 'Filiaalbezoek met paspoort, visum-bewijs en Australisch adres. OPAL, Myki of Go Card bij elke kiosk.' },
+        { '@type': 'HowToStep', position: 13, name: 'Vind je eerste baan', url: `${SITE_URL}/werk`, text: 'Hospitality (1-3 weken), retail (2-4 weken), farmwork (direct in seizoen). Zeven routes vergeleken.' },
+        { '@type': 'HowToStep', position: 14, name: 'Houd uren bij en check payslips', url: `${SITE_URL}/loon`, text: 'Casual minimumloon AUD 31,19/uur. Super 12%. Onderbetaling melden bij Fair Work Ombudsman.' },
+      ],
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2'],
+      },
+    },
+  ],
+}
 
 const phases = [
   {
@@ -138,7 +181,11 @@ export default function BeginHier() {
       <Helmet>
         <title>Begin hier, 14 stappen voor je working holiday Australië · Aussiestart</title>
         <meta name="description" content="14 stappen op volgorde van eerste oriëntatie tot eerste payslip. Visum, verzekering, vluchten, eSIM, TFN, Medicare, eerste baan. Een startgids zonder bemiddelaar nodig." />
+        <meta property="og:title" content="14 stappen voor Working Holiday Australië — van oriëntatie tot eerste payslip" />
+        <meta property="og:description" content="In volgorde: visum AUD 670, verzekering, vlucht, eSIM, TFN, Medicare, bankrekening, eerste baan. Zonder bureau, zonder €2.000 pakket." />
+        <meta property="og:type" content="article" />
       </Helmet>
+      <JsonLd data={beginHierSchema} />
       <PageHeader
         eyebrow="Startgids"
         title="14 stappen, in volgorde, van eerste idee tot eerste payslip"
@@ -161,6 +208,27 @@ export default function BeginHier() {
         {phases.map((phase) => (
           <Phase key={phase.name} phase={phase} />
         ))}
+
+        {/* ── Startkit-CTA ─────────────────────────────────────────────── */}
+        <div className="not-prose my-10 border border-forest/20 bg-forest/5 rounded-xl p-6 sm:p-8">
+          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-forest mb-3">Je hebt het plan</div>
+          <h2 className="font-serif text-2xl text-forest leading-tight mb-3">
+            Dit zijn de bestanden die je bijhoudt
+          </h2>
+          <p className="text-sm text-ink/80 leading-relaxed mb-5 max-w-prose">
+            Budgetplanner voor jouw scenario, drie Australische CV-templates, de vóór-vertrek checklist
+            en de 88-dagen bewijs-checklist. Eén keer kopen, voor altijd bijhouden.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              to="/startkit"
+              className="inline-flex items-center justify-center gap-2 bg-forest text-bone font-medium text-sm px-6 py-3 rounded-full hover:bg-forest/80 transition-colors no-underline"
+            >
+              Startkit bekijken — €19,95 →
+            </Link>
+            <span className="text-xs text-slate self-center">Eenmalig. Geen abonnement.</span>
+          </div>
+        </div>
 
         <h2>Wat erna?</h2>
         <p>
@@ -265,20 +333,40 @@ function Step({ step }) {
 
 function BeginAside() {
   return (
-    <div className="bg-forest text-bone rounded-2xl p-5">
-      <div className="text-xs uppercase tracking-wider text-ochre mb-2">Start hier</div>
-      <p className="text-sm leading-relaxed mb-3">
-        Net begonnen met oriënteren? Stap 1: check of je aan de visum-voorwaarden voldoet. Daarna pas verder.
-      </p>
-      <Link to="/visum" className="text-ochre underline underline-offset-4 text-sm">Visum-voorwaarden →</Link>
-      <hr className="my-5 border-bone/20" />
-      <div className="text-xs uppercase tracking-wider text-ochre mb-2">Snel naar</div>
-      <ul className="space-y-2 text-sm">
-        <li><Link to="/kosten" className="hover:text-ochre underline underline-offset-4">Wat kost het →</Link></li>
-        <li><Link to="/voor-vertrek" className="hover:text-ochre underline underline-offset-4">Voorbereiden →</Link></li>
-        <li><Link to="/eerste-week" className="hover:text-ochre underline underline-offset-4">Eerste week →</Link></li>
-        <li><Link to="/werk" className="hover:text-ochre underline underline-offset-4">Werk vinden →</Link></li>
-      </ul>
+    <div className="space-y-4">
+      <div className="bg-forest text-bone rounded-2xl p-5">
+        <div className="text-xs uppercase tracking-wider text-ochre mb-2">Start hier</div>
+        <p className="text-sm leading-relaxed mb-3">
+          Net begonnen met oriënteren? Stap 1: check of je aan de visum-voorwaarden voldoet. Daarna pas verder.
+        </p>
+        <Link to="/visum" className="text-ochre underline underline-offset-4 text-sm">Visum-voorwaarden →</Link>
+        <hr className="my-5 border-bone/20" />
+        <div className="text-xs uppercase tracking-wider text-ochre mb-2">Snel naar</div>
+        <ul className="space-y-2 text-sm">
+          <li><Link to="/kosten" className="hover:text-ochre underline underline-offset-4">Wat kost het →</Link></li>
+          <li><Link to="/voor-vertrek" className="hover:text-ochre underline underline-offset-4">Voorbereiden →</Link></li>
+          <li><Link to="/eerste-week" className="hover:text-ochre underline underline-offset-4">Eerste week →</Link></li>
+          <li><Link to="/werk" className="hover:text-ochre underline underline-offset-4">Werk vinden →</Link></li>
+        </ul>
+      </div>
+      <div className="border border-sand rounded-2xl p-5">
+        <div className="text-xs font-semibold uppercase tracking-wider text-slate mb-2">Stap 6: Verzekering</div>
+        <p className="text-xs text-ink/70 leading-relaxed mb-3">
+          SafetyWing is de flexibelste keuze: maandelijks opzegbaar, ook activeerbaar als je al onderweg bent.
+        </p>
+        <AffiliateLink partner="safetywing" variant="button">
+          Bekijk SafetyWing
+        </AffiliateLink>
+      </div>
+      <div className="border border-forest/20 bg-forest/5 rounded-2xl p-5">
+        <div className="text-xs font-semibold uppercase tracking-wider text-forest mb-2">Alles op één plek</div>
+        <p className="text-xs text-ink/70 leading-relaxed mb-3">
+          Budgetplanner, Australische CV-templates en checklists voor vertrek en 88-dagen.
+        </p>
+        <Link to="/startkit" className="block text-center text-xs font-medium bg-forest text-bone px-4 py-2.5 rounded-full hover:bg-forest/80 transition-colors no-underline">
+          Startkit — €19,95 →
+        </Link>
+      </div>
     </div>
   )
 }

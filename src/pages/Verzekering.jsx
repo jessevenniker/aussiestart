@@ -4,6 +4,67 @@ import PageHeader from '../components/PageHeader.jsx'
 import { Callout, FAQ, FactsTable, ArticleLayout } from '../components/Article.jsx'
 import SourceLink from '../components/SourceLink.jsx'
 import AffiliateLink from '../components/AffiliateLink.jsx'
+import JsonLd from '../components/JsonLd.jsx'
+
+const SITE_URL = 'https://australiestart.nl'
+
+const verzekeringSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      '@id': `${SITE_URL}/verzekering#article`,
+      headline: 'Reisverzekering Working Holiday Australië: 4 polissen eerlijk vergeleken',
+      description: 'SafetyWing, JoHo, World Nomads en Allianz vergeleken voor Working Holiday Makers. Eerlijk over wat ze niet uitkeren, met beslisboom voor jouw situatie.',
+      url: `${SITE_URL}/verzekering`,
+      inLanguage: 'nl-NL',
+      dateModified: '2026-04-29',
+      author: { '@id': `${SITE_URL}/#organization` },
+      publisher: { '@id': `${SITE_URL}/#organization` },
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', 'h2'],
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${SITE_URL}/verzekering#faq`,
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Welke reisverzekering is het beste voor Working Holiday Australië?',
+          acceptedAnswer: { '@type': 'Answer', text: 'SafetyWing is de beste keuze voor een lang verblijf (6-12 maanden) met flexibele maandelijkse opzegging voor circa €25-40 per maand. JoHo is beter als je een NL-talige polis en klantenservice wilt. Voor adventure-activiteiten (duiken, klimmen) kies World Nomads.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Heb ik een reisverzekering nodig naast Medicare?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Ja. Medicare (via het RHCA-verdrag tussen NL en Australië) dekt publieke ziekenhuiszorg en de huisarts, maar niet: tandheelkunde, ambulance buiten je staat, privéziekenhuis, repatriëring, eigendommen en vlucht-annulering. Een aanvullende reisverzekering is nodig voor die gaten.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Wat kost een reisverzekering voor Working Holiday Australië?',
+          acceptedAnswer: { '@type': 'Answer', text: 'SafetyWing kost €25-40 per maand, maandelijks opzegbaar. JoHo kost €40-65 per maand op jaarbasis. World Nomads €35-55 per maand. Allianz €40-70 per maand. Premies zijn indicatief voor leeftijd 25, alleenreizend.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Kan ik een verzekering afsluiten als ik al in Australië ben?',
+          acceptedAnswer: { '@type': 'Answer', text: 'SafetyWing kun je ook activeren als je al onderweg of in Australië bent. JoHo, World Nomads en Allianz vereisen doorgaans dat je de polis afsluit vóór vertrek of in de eerste dagen na aankomst.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Dekt mijn reisverzekering farmwork en andere fysieke arbeid?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Dat hangt af van de polis. SafetyWing dekt licht fysiek werk standaard. Zwaar handmatig werk (mijnbouw, bouwwerk op hoogte) vereist bij alle aanbieders een aanvullende module of is uitgesloten. Controleer de polisvoorwaarden voordat je aan farmwork begint.' },
+        },
+        {
+          '@type': 'Question',
+          name: 'Wat dekt een reisverzekering niet voor Working Holiday Makers?',
+          acceptedAnswer: { '@type': 'Answer', text: 'Vrijwel alle polissen dekken niet: pre-existing conditions (chronische ziekten), preventief tandartsbezoek, mentale gezondheid anders dan bij acute crisis, en eigendommen boven een lage limiet (SafetyWing: $3.000 totaal). Lees de uitsluitingslijst vóór je tekent.' },
+        },
+      ],
+    },
+  ],
+}
 
 export default function Verzekering() {
   return (
@@ -11,7 +72,11 @@ export default function Verzekering() {
       <Helmet>
         <title>Reisverzekering working holiday Australië, 4 polissen vergeleken · Aussiestart</title>
         <meta name="description" content="SafetyWing, JoHo, World Nomads en Allianz vergeleken voor Working Holiday Makers. Eerlijk over wat ze niet uitkeren, met beslisboom voor jouw situatie." />
+        <meta property="og:title" content="Reisverzekering Working Holiday Australië: SafetyWing, JoHo, World Nomads, Allianz vergeleken" />
+        <meta property="og:description" content="Welke verzekering past bij jou? Eerlijke vergelijking van 4 polissen met beslisboom, wat ze niet dekken en onze positie als SafetyWing Ambassador." />
+        <meta property="og:type" content="article" />
       </Helmet>
+      <JsonLd data={verzekeringSchema} />
       <PageHeader
         eyebrow="Verzekering"
         title="Vier polissen voor working holiday Australië, eerlijk vergeleken"
