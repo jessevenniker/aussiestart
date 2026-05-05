@@ -45,9 +45,13 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-bone/10">
-        <div className="container-wide py-5 flex flex-col sm:flex-row justify-between gap-2 text-xs text-bone/60">
-          <span>© {new Date().getFullYear()} Aussiestart. Een onafhankelijk project.</span>
-          <span>Geen bemiddelaar. Geen pakket. Eerlijke affiliate.</span>
+        <div className="container-wide py-5 flex flex-col sm:flex-row justify-between gap-3 text-xs text-bone/60">
+          <span>© {new Date().getFullYear()} Aussiestart — Jesco Innovation B.V.</span>
+          <nav className="flex flex-wrap gap-4">
+            <Link to="/privacy" className="hover:text-ochre">Privacybeleid</Link>
+            <Link to="/voorwaarden" className="hover:text-ochre">Algemene Voorwaarden</Link>
+            <Link to="/affiliate-disclosure" className="hover:text-ochre">Affiliate disclosure</Link>
+          </nav>
         </div>
       </div>
     </footer>

@@ -71,6 +71,8 @@ const Startkit            = lazy(() => import('./pages/Startkit.jsx'))
 const StartkitDownload    = lazy(() => import('./pages/StartkitDownload.jsx'))
 const ZelfRegelenOfBureau = lazy(() => import('./pages/ZelfRegelenOfBureau.jsx'))
 const Melbourne           = lazy(() => import('./pages/Melbourne.jsx'))
+const Privacy             = lazy(() => import('./pages/Privacy.jsx'))
+const Voorwaarden         = lazy(() => import('./pages/Voorwaarden.jsx'))
 const NotFound            = lazy(() => import('./pages/NotFound.jsx'))
 
 function PageLoader() {
@@ -136,6 +138,8 @@ export default function App() {
             <Route path="/melbourne"             element={<Melbourne />} />
             <Route path="/verhalen"              element={<Verhalen />} />
             <Route path="/over"                  element={<Over />} />
+            <Route path="/privacy"               element={<Privacy />} />
+            <Route path="/voorwaarden"           element={<Voorwaarden />} />
             <Route path="/affiliate-disclosure"  element={<AffiliateDisclosure />} />
             <Route path="/bronnen"               element={<Bronnen />} />
             <Route path="/contact"               element={<Contact />} />
