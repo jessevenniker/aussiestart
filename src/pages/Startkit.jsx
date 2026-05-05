@@ -135,6 +135,7 @@ export default function Startkit() {
         <meta property="og:title" content={`De Aussiestart Startkit: ${LAUNCH_PRICE}`} />
         <meta property="og:description" content="Budgetplanner, Australische CV-templates, checklists en bronnen. Zelf regelen, voor een fractie van een bureaupakket." />
         <meta property="og:type" content="product" />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <JsonLd data={startkitSchema} />
 

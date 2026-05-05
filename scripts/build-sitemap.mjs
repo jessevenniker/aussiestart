@@ -3,6 +3,7 @@
  * Draait pre-build via npm script.
  *
  * Regels:
+ * - /startkit staat tijdelijk op noindex (betaalmogelijkheid nog niet klaar) → niet in sitemap
  * - /startkit-download staat op noindex → niet in sitemap
  * - /verhalen staat op noindex → niet in sitemap
  * - lastmod per pagina op basis van echte content-datum voor betere crawl-signalen
@@ -35,7 +36,7 @@ const routes = [
   { path: '/tax-file-number',      lastmod: '2026-04-30', changefreq: 'monthly', priority: 0.8 },
   { path: '/88-dagen',             lastmod: '2026-05-02', changefreq: 'monthly', priority: 0.9 },
   { path: '/88-dagen-checker',     lastmod: '2026-05-01', changefreq: 'monthly', priority: 0.8 },
-  { path: '/startkit',             lastmod: '2026-05-02', changefreq: 'monthly', priority: 0.9 },
+  // /startkit tijdelijk noindex totdat Stripe betaallink live is
   { path: '/zelf-regelen-of-bureau', lastmod: '2026-05-04', changefreq: 'monthly', priority: 0.9 },
   { path: '/melbourne',            lastmod: '2026-05-04', changefreq: 'monthly', priority: 0.8 },
   { path: '/sydney',               lastmod: '2026-05-01', changefreq: 'monthly', priority: 0.8 },

@@ -363,26 +363,6 @@ export default function Kosten() {
         ]}
       />
 
-      {/* ── Startkit CTA ──────────────────────────────────────────────── */}
-      <section className="container-wide pb-6">
-        <div className="border border-sand rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:items-center justify-between bg-bone">
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-ember mb-2">Aussiestart Startkit</div>
-            <div className="font-serif text-xl text-forest mb-1">Inclusief de uitgewerkte budgetplanner</div>
-            <p className="text-sm text-ink/65 max-w-sm">
-              Google Sheet met scenario-calculator, Australische CV-templates en vier checklists.
-              Voor €19,95 in plaats van een bureaupakket van €549–€2.050.
-            </p>
-          </div>
-          <Link
-            to="/startkit"
-            className="shrink-0 inline-flex items-center gap-2 bg-forest text-bone text-sm font-medium px-5 py-2.5 rounded-full hover:bg-forest/85 transition-colors no-underline whitespace-nowrap"
-          >
-            Bekijk de Startkit →
-          </Link>
-        </div>
-      </section>
-
       {/* ── EmailCapture ──────────────────────────────────────────────── */}
       <section className="container-wide pb-16">
         <EmailCapture

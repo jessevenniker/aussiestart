@@ -209,27 +209,6 @@ export default function BeginHier() {
           <Phase key={phase.name} phase={phase} />
         ))}
 
-        {/* ── Startkit-CTA ─────────────────────────────────────────────── */}
-        <div className="not-prose my-10 border border-forest/20 bg-forest/5 rounded-xl p-6 sm:p-8">
-          <div className="text-xs font-semibold uppercase tracking-[0.18em] text-forest mb-3">Je hebt het plan</div>
-          <h2 className="font-serif text-2xl text-forest leading-tight mb-3">
-            Dit zijn de bestanden die je bijhoudt
-          </h2>
-          <p className="text-sm text-ink/80 leading-relaxed mb-5 max-w-prose">
-            Budgetplanner voor jouw scenario, drie Australische CV-templates, de vóór-vertrek checklist
-            en de 88-dagen bewijs-checklist. Eén keer kopen, voor altijd bijhouden.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3">
-            <Link
-              to="/startkit"
-              className="inline-flex items-center justify-center gap-2 bg-forest text-bone font-medium text-sm px-6 py-3 rounded-full hover:bg-forest/80 transition-colors no-underline"
-            >
-              Startkit bekijken — €19,95 →
-            </Link>
-            <span className="text-xs text-slate self-center">Eenmalig. Geen abonnement.</span>
-          </div>
-        </div>
-
         <h2>Wat erna?</h2>
         <p>
           Na stap 14 is je verblijf op de rails. Een paar dingen om in gedachten te houden voor het tweede en
@@ -357,15 +336,6 @@ function BeginAside() {
         <AffiliateLink partner="safetywing" variant="button">
           Bekijk SafetyWing
         </AffiliateLink>
-      </div>
-      <div className="border border-forest/20 bg-forest/5 rounded-2xl p-5">
-        <div className="text-xs font-semibold uppercase tracking-wider text-forest mb-2">Alles op één plek</div>
-        <p className="text-xs text-ink/70 leading-relaxed mb-3">
-          Budgetplanner, Australische CV-templates en checklists voor vertrek en 88-dagen.
-        </p>
-        <Link to="/startkit" className="block text-center text-xs font-medium bg-forest text-bone px-4 py-2.5 rounded-full hover:bg-forest/80 transition-colors no-underline">
-          Startkit — €19,95 →
-        </Link>
       </div>
     </div>
   )

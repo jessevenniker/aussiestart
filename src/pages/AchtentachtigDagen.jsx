@@ -452,25 +452,6 @@ export default function AchtentachtigDagen() {
         ]}
       />
 
-      {/* Startkit CTA */}
-      <section className="container-wide pb-6">
-        <div className="border border-sand rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-6 sm:items-center justify-between bg-bone">
-          <div>
-            <div className="text-xs font-semibold uppercase tracking-widest text-ember mb-2">Aussiestart Startkit</div>
-            <div className="font-serif text-xl text-forest mb-1">Inclusief de 88-dagen bewijs-checklist</div>
-            <p className="text-sm text-ink/65 max-w-sm">
-              Wat je per werkgever bewaart, welk formulier je nodig hebt en hoe je postcode controleert,
-              uitgewerkt in een invulklare checklist. Plus budgetplanner, CV-templates en meer.
-            </p>
-          </div>
-          <Link
-            to="/startkit"
-            className="shrink-0 inline-flex items-center gap-2 bg-forest text-bone text-sm font-medium px-5 py-2.5 rounded-full hover:bg-forest/85 transition-colors no-underline whitespace-nowrap"
-          >
-            Bekijk de Startkit →
-          </Link>
-        </div>
-      </section>
 
       {/* Email capture buiten de ArticleLayout — volle breedte */}
       <section className="container-wide pb-16">

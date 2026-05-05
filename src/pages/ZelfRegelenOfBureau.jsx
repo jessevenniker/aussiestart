@@ -53,7 +53,7 @@ const TAKEN = [
   {
     taak: 'Prijs',
     bureau: { label: '€549 tot €2.050', detail: 'Afhankelijk van pakket. Sommige bureaus rekenen ook maandelijkse "support"-fees.' },
-    zelf:   { label: 'AUD 670 + €19,95', detail: 'Visumkosten (AUD 670) plus de Startkit (€19,95). Alles zit erin. Geen maandelijkse kosten.' },
+    zelf:   { label: 'AUD 670', detail: 'Alleen visumkosten (AUD 670). De rest regel je gratis via Aussiestart.' },
     winnaar: 'zelf',
   },
 ]
@@ -103,7 +103,7 @@ const bureauSchema = {
       '@type': 'Article',
       '@id': `${SITE_URL}/zelf-regelen-of-bureau#article`,
       headline: 'Working Holiday Australië zelf regelen of via een bureau?',
-      description: 'Eerlijke vergelijking: wat doet een bureau voor €549-2.050, en wat kun je zelf doen voor AUD 670 visumkosten plus €19,95 Startkit. Taken, prijzen en valkuilen.',
+      description: 'Eerlijke vergelijking: wat doet een bureau voor €549-2.050, en wat kun je zelf doen voor alleen AUD 670 visumkosten. Taken, prijzen en valkuilen.',
       url: `${SITE_URL}/zelf-regelen-of-bureau`,
       inLanguage: 'nl-NL',
       dateModified: '2026-05-04',
@@ -249,10 +249,8 @@ export default function ZelfRegelenOfBureau() {
           Geen extra verplichte uitgaven voor de aanvraag zelf.
         </p>
         <p>
-          Voor de rest kun je de Aussiestart Startkit gebruiken: budgetplanner, drie Australische
-          CV-templates, twee checklists, sharehouse-vergelijker en bronnenlijst voor €19,95. In totaal
-          betaal je voor het regelen van je Working Holiday dus €430 aan essentiële kosten, tegenover
-          €549 tot €2.050 bij een bureau.
+          Alle informatie die bureaus je geven staat gratis op Aussiestart, in de juiste volgorde.
+          Je betaalt alleen de visumkosten aan de Australische overheid.
         </p>
 
         <div className="not-prose my-6 bg-bone border border-sand rounded-xl p-6">
@@ -265,8 +263,8 @@ export default function ZelfRegelenOfBureau() {
             </div>
             <div className="border border-forest rounded-lg p-4 bg-forest/5">
               <div className="text-xs font-semibold uppercase tracking-wider text-forest mb-2">Zelf regelen</div>
-              <div className="font-serif text-3xl text-forest mb-1">€430</div>
-              <div className="text-xs text-ink/60">Visum AUD 670 (±€410) + Startkit €19,95. Alles inbegrepen.</div>
+              <div className="font-serif text-3xl text-forest mb-1">AUD 670</div>
+              <div className="text-xs text-ink/60">Alleen visumkosten. De rest regel je gratis via Aussiestart.</div>
             </div>
           </div>
         </div>
@@ -295,10 +293,10 @@ export default function ZelfRegelenOfBureau() {
             Visum zelf aanvragen →
           </Link>
           <Link
-            to="/startkit"
+            to="/begin-hier"
             className="flex-1 text-center bg-forest text-bone font-medium text-sm px-5 py-3 rounded-full hover:bg-forest/80 transition-colors no-underline"
           >
-            Bekijk de Startkit (€19,95) →
+            Open het 14-stappenplan →
           </Link>
         </div>
 
@@ -333,15 +331,15 @@ function BureauAside() {
       </div>
 
       <div className="border border-forest/20 bg-forest/5 rounded-xl p-5">
-        <div className="text-xs font-semibold uppercase tracking-wider text-forest mb-2">Alternatief</div>
+        <div className="text-xs font-semibold uppercase tracking-wider text-forest mb-2">Begin hier</div>
         <p className="text-sm text-ink/80 mb-3">
-          Alles wat je nodig hebt, voor een fractie van een bureau-pakket.
+          Het 14-stappenplan: van eerste oriëntatie tot eerste payslip, zonder bureau.
         </p>
         <Link
-          to="/startkit"
+          to="/begin-hier"
           className="block text-center text-sm font-medium bg-forest text-bone px-4 py-2.5 rounded-full hover:bg-forest/80 transition-colors no-underline"
         >
-          Startkit: €19,95 →
+          Open het stappenplan →
         </Link>
       </div>
     </div>
