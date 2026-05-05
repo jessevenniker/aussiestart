@@ -51,7 +51,7 @@ function CaptureForm({ action, cta, isReady, compact = false }) {
     return (
       <div className={compact ? '' : 'flex flex-wrap gap-3'}>
         <a
-          href="mailto:hello@australiestart.nl?subject=Australië%20Start%20Checklist"
+          href="mailto:info@jescoinnovation.com?subject=Australië%20Start%20Checklist"
           className={compact
             ? 'block w-full text-center btn-primary text-sm'
             : 'btn-primary text-sm'
