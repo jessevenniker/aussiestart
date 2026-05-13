@@ -75,7 +75,7 @@ const kostenSchema = {
           name: 'Wat kost een bemiddelaar-pakket voor een Working Holiday Australië?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Pakketten van bureaus zoals Travel Active of KILROY kosten €549 tot €2.050. Het visum (AUD 670), de vlucht (€700–1.300) en de verzekering (€200–500) betaal je sowieso. Het extra bedrag voor het bureau is dus feitelijk €500–1.000 voor diensten die je ook zelf kunt regelen via ImmiAccount, Hostelworld en de ATO.',
+            text: 'Bemiddelingsbureaus bieden pakketten aan van €549 tot €2.050. Het visum (AUD 670), de vlucht (€700–1.300) en de verzekering (€200–500) betaal je sowieso. Het extra bedrag voor het bureau is dus feitelijk €500–1.000 voor diensten die je ook zelf kunt regelen via ImmiAccount, Hostelworld en de ATO.',
           },
         },
       ],
@@ -243,7 +243,7 @@ export default function Kosten() {
         {/* ── Vergelijking met bemiddelaar ──────────────────────────── */}
         <h2>Wat kost een bemiddelaar-pakket extra?</h2>
         <p>
-          Pakketten van bureaus zoals Travel Active of KILROY kosten €549 tot €2.050. Wat zit erin?
+          Bemiddelingsbureaus bieden pakketten aan van €549 tot €2.050. Wat zit erin?
         </p>
 
         <div className="not-prose my-5 divide-y divide-sand border-t border-b border-sand">

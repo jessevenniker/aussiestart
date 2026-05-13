@@ -38,9 +38,12 @@ export default function Hero() {
         <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl leading-[1.05] max-w-3xl">
           <span className="italic">G'day,</span> backpacker.
         </h1>
-        <p className="mt-6 max-w-xl text-lg text-bone/85 leading-relaxed">
-          Down Under doe je zelf. Geen bemiddelaar, geen €2.000-pakket.
-          Eerlijke gidsen, echte cijfers, en de tips die bureaus je niet vertellen.
+        <p className="mt-3 text-base sm:text-lg font-medium text-ochre/90 tracking-wide">
+          Working Holiday Australië zelf regelen
+        </p>
+        <p className="mt-4 max-w-xl text-base text-bone/80 leading-relaxed">
+          Geen bemiddelaar, geen €2.000-pakket. Eerlijke gidsen, echte cijfers,
+          en de stappen die bureaus je niet vertellen.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link to="/begin-hier" className="btn-primary">

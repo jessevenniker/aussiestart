@@ -4,8 +4,11 @@ import Slider from './Slider.jsx'
 import { facts } from '../data/facts.js'
 
 const AUD_TO_EUR = facts.audToEur.value // 0.61, peildatum april 2026
+// Sliders: exact genoeg voor vergelijking
 const fmtAUD = (n) => 'AUD ' + Math.round(n).toLocaleString('nl-NL')
-const fmtEUR = (n) => '€ ' + Math.round(n).toLocaleString('nl-NL')
+// Totalen: afgerond op 500 om schijnprecisie te vermijden
+const fmtAUDTotal = (n) => '± AUD ' + (Math.round(n / 500) * 500).toLocaleString('nl-NL')
+const fmtEURTotal = (n) => '± € ' + (Math.round(n / 500) * 500).toLocaleString('nl-NL')
 
 export default function CostCalculator() {
   const [hostel, setHostel]       = useState(280)   // AUD/week
@@ -100,8 +103,8 @@ export default function CostCalculator() {
 
       <aside className="bg-forest text-bone rounded-2xl p-6 sm:p-7 lg:sticky lg:top-24 self-start">
         <div className="text-xs uppercase tracking-wider text-ochre mb-2">Per maand</div>
-        <div className="font-serif text-4xl leading-none mb-1">{fmtAUD(calc.monthly)}</div>
-        <div className="text-bone/70 text-sm">≈ {fmtEUR(calc.monthlyEUR)} per maand</div>
+        <div className="font-serif text-4xl leading-none mb-1">{fmtAUDTotal(calc.monthly)}</div>
+        <div className="text-bone/70 text-sm">{fmtEURTotal(calc.monthlyEUR)} per maand</div>
 
         <hr className="my-5 border-bone/15" />
 
@@ -121,8 +124,8 @@ export default function CostCalculator() {
         <div className="text-xs uppercase tracking-wider text-ochre mb-2">
           Totaal voor {maanden} {maanden === 1 ? 'maand' : 'maanden'}
         </div>
-        <div className="font-serif text-3xl leading-none mb-1">{fmtAUD(calc.grandTotal)}</div>
-        <div className="text-bone/70 text-sm mb-4">≈ {fmtEUR(calc.grandTotalEUR)}</div>
+        <div className="font-serif text-3xl leading-none mb-1">{fmtAUDTotal(calc.grandTotal)}</div>
+        <div className="text-bone/70 text-sm mb-4">{fmtEURTotal(calc.grandTotalEUR)}</div>
 
         <div className="text-xs text-bone/60 leading-relaxed">
           Reken extra op AUD 5.000 spaargeld dat je moet kunnen tonen bij visumaanvraag.

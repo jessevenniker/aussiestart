@@ -120,6 +120,13 @@ export default function Home() {
               <dd className="font-serif text-2xl text-forest mt-0.5">18–30 jaar</dd>
             </div>
           </dl>
+          <p className="text-[11px] text-slate/70 pb-2 border-t border-sand mt-0 pt-2">
+            Gecheckt mei 2026 · Bron:{' '}
+            <a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/work-holiday-417" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-ember">
+              Department of Home Affairs
+            </a>{' '}
+            · Bedragen en leeftijdsgrens kunnen wijzigen
+          </p>
         </div>
       </div>
 
@@ -260,6 +267,41 @@ export default function Home() {
         intro="Geen stockfoto's, geen Sydney Opera House voor de derde keer. Plekken waar je ook echt langskomt als je het zelf regelt."
         items={galleryPhotos}
       />
+
+      {/* ── Mini-ervaringen ──────────────────────────────────────────────── */}
+      <section className="container-wide py-14">
+        <div className="text-xs font-semibold uppercase tracking-[0.18em] text-ember mb-8">Ervaringen</div>
+        <div className="grid sm:grid-cols-3 gap-0 divide-y sm:divide-y-0 sm:divide-x divide-sand border-t border-b border-sand">
+          {[
+            {
+              quote: 'Ik begon met vier hostelnachten in Sydney. Achteraf te kort — kamers bezichtigen duurt langer dan je denkt. Plan zeven tot tien dagen in.',
+              naam: 'Lisa, 24',
+              info: 'Sydney → Melbourne, 11 maanden',
+            },
+            {
+              quote: 'Visum aanvragen duurde bij mij letterlijk 28 minuten. Ik snapte niet waarom ik daar €549 voor had moeten betalen bij een bureau.',
+              naam: 'Daan, 27',
+              info: 'Brisbane → Bundaberg farmwork',
+            },
+            {
+              quote: 'De 88-dagenregel is niet moeilijk, maar je moet je papieren wel op orde hebben. Eén werkgever die geen payslips gaf kostte me drie weken extra.',
+              naam: 'Sanne, 25',
+              info: 'Mildura druivenoogst, 2e WHV gehaald',
+            },
+          ].map((e) => (
+            <div key={e.naam} className="py-6 px-0 sm:px-6 first:pl-0 last:pr-0">
+              <blockquote className="text-sm text-ink/80 leading-relaxed mb-4 italic">
+                "{e.quote}"
+              </blockquote>
+              <div className="text-xs font-semibold text-forest">{e.naam}</div>
+              <div className="text-xs text-slate">{e.info}</div>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-slate mt-4">
+          <Link to="/verhalen" className="underline underline-offset-2 hover:text-ember">Meer ervaringen lezen →</Link>
+        </p>
+      </section>
 
       {/* ── E-mailcapture ────────────────────────────────────────────────── */}
       <section className="container-wide pb-16">
